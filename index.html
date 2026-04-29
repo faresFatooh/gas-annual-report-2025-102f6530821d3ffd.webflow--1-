@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
+﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6947c050c911bc4da703773c" data-wf-site="6947c050c911bc4da703773d">
 <head>
   <meta charset="utf-8">
@@ -628,7 +628,7 @@
               <div><img src="images/x-mark.png" loading="lazy" id="Image-77" alt="" class="image-77"></div>
             </div>
             <div class="text-block-16">GAS Metal Tech (GMT) is a business segment of GAS Arabian Services Company which provides specialized manufacturing and fabrication solutions to the Kingdom’s industrial sector. GMT operates two fully equipped fabrication facilities strategically located in the Eastern Province: a 30,000 sqm flagship facility in Dammam at King Abdulaziz Port, and a 12,000 sqm facility in Jubail, enhancing capacity and proximity to major industrial clients. </div>
-            <div id="full-text-3" class="full-description text-block-16">GMT delivers end-to-end capabilities including design, fabrication, assembly, testing, and inspection of modular skids, pressure vessels, piping spools, and structural steel for oil &amp; gas, petrochemical, power, and industrial projects. This segment serves leading clients such as Saudi Aramco, SABIC, Saudi Electricity Company, Schlumberger, and Sipchem, and operates in compliance with ISO and ASME standards, ensuring consistent quality, safety, and reliability.</div>
+            <div id="full-text-3" class="full-description text-block-16">GMT delivers end-to-end capabilities including design, fabrication, assembly, testing, and inspection of modular skids, pressure vessels, piping spools, and structural steel for oil &amp; gas, petrochemical, power, and industrial projects. This segment serves leading clients such as Saudi Aramco, SABIC, Saudi Electricity Company, Schlumberger, and Sipchem, and operates in compliance with ISO and ASME standards, ensuring consistent quality, safety, and reliability.<br></div>
             <div id="read-more-3" class="div-block-89">
               <div class="text-block-17">Read More </div><img src="images/Arrow-2.png" loading="lazy" alt="" class="image-34">
             </div>
@@ -947,6 +947,82 @@ $(document).ready(function() {
     font-family: "Greta Sans Pro", sans-serif !important;
     font-weight: 700 !important;
   }
+  
+  /* تحسين full-description على الجوال */
+  .full-description {
+    display: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 767px) {
+    /* توحيد حجم الخط والـ padding للفقرات */
+    .div-block-160 .text-block-16 {
+      font-size: 14px !important;
+      line-height: 1.8 !important;
+      padding: 20px !important;
+      margin: 0 !important;
+    }
+    
+    .full-description {
+      padding: 20px !important;
+      font-size: 14px !important;
+      line-height: 1.8 !important;
+      word-break: break-word;
+      display: none;
+      margin: 0 !important;
+    }
+    
+    /* توسيط Revenue Mix والـ legend على الجوال */
+    .text-block-66 {
+      text-align: center !important;
+      width: 100% !important;
+    }
+    
+    .div-block-326 {
+      text-align: center !important;
+      width: 100% !important;
+      padding: 0 10px !important;
+    }
+    
+    .div-block-86 {
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 15px !important;
+    }
+    
+    .div-block-87 {
+      white-space: nowrap !important;
+    }
+    
+    .text-block-15 {
+      white-space: nowrap !important;
+      font-size: 12px !important;
+    }
+    
+    /* عند توسع الكارد - إزالة جميع القيود */
+    .segment-card[style*="height: auto"] {
+      min-height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+    
+    .segment-card[style*="height: auto"] .div-block-160 {
+      position: static !important;
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+    }
+  }
+  
   /* إخفاء صورة الإكس في الحالة الطبيعية */
   #Image-77 {
     display: none;
@@ -1211,6 +1287,175 @@ window.addEventListener('DOMContentLoaded', function() {
   }
   window.addEventListener('scroll',check,{passive:true});
   setTimeout(check, 100);
+});
+</script>
+<script>
+// Auto-fit hover card text - binary search font size to fit card
+window.addEventListener('DOMContentLoaded', function() {
+
+  var CARD_H_DESKTOP = 650;
+  var CARD_H_MOBILE  = 500;
+  var BOTTOM_GAP = 20; // space below Read More
+
+  function fitCardText(card) {
+    var box = card.querySelector('.div-block-160');
+    if (!box) return;
+    var isMobile = window.innerWidth <= 767;
+
+    // Measure actual image height (always visible)
+    var img = card.querySelector('.image-19, .image-20, .image-21');
+    var CARD_H = img ? img.getBoundingClientRect().height : (isMobile ? 500 : 420);
+    if (CARD_H < 10) CARD_H = isMobile ? 500 : 420;
+
+    // Show box invisibly to measure
+    var wasHidden = getComputedStyle(box).display === 'none';
+    if (wasHidden) { box.style.visibility = 'hidden'; box.style.display = 'flex'; box.style.flexDirection = 'column'; }
+
+    var texts    = box.querySelectorAll('.text-block-16:not(.full-description)');
+    var title    = box.querySelector('.heading-61');
+    var readMore = box.querySelector('.div-block-89');
+    var fullDescs = box.querySelectorAll('.full-description');
+
+    // Hide extras during measure
+    fullDescs.forEach(function(f){ f.style.display = 'none'; });
+    if (readMore) readMore.style.display = 'flex';
+
+    // Measure fixed elements
+    var titleH    = title    ? title.offsetHeight    : 0;
+    var readMoreH = readMore ? readMore.offsetHeight : 0;
+    var padding   = parseFloat(getComputedStyle(box).paddingTop) + parseFloat(getComputedStyle(box).paddingBottom);
+
+    // Max 90% of card height for all content
+    var maxH = CARD_H * 0.90;
+    var availableH = maxH - titleH - readMoreH - padding - BOTTOM_GAP;
+    if (availableH < 30) availableH = CARD_H * 0.5;
+
+    // Binary search
+    var lo = 6, hi = isMobile ? 18 : 28, best = lo;
+    for (var i = 0; i < 22; i++) {
+      var mid = (lo + hi) / 2;
+      texts.forEach(function(t){ t.style.fontSize = mid + 'px'; t.style.lineHeight = '1.5'; });
+      var textH = 0;
+      texts.forEach(function(t){ textH += t.offsetHeight; });
+      if (textH <= availableH) { best = mid; lo = mid; } else { hi = mid; }
+    }
+    texts.forEach(function(t){ t.style.fontSize = best + 'px'; t.style.lineHeight = '1.5'; });
+
+    // Apply same font size to full-description
+    fullDescs.forEach(function(f){ 
+      f.style.fontSize = best + 'px'; 
+      f.style.lineHeight = '1.5';
+      f.style.fontFamily = 'Gretasanspro Reg, Georgia, sans-serif';
+      f.style.fontWeight = '400';
+    });
+
+    // Remove bold from main text
+    texts.forEach(function(t){ t.style.fontFamily = 'Gretasanspro Reg, Georgia, sans-serif'; t.style.fontWeight = '400'; });
+
+    // Restore
+    fullDescs.forEach(function(f){ f.style.display = ''; });
+    if (readMore) readMore.style.display = '';
+    if (wasHidden) { box.style.display = ''; box.style.visibility = ''; }
+  }
+
+  function fitAll() {
+    document.querySelectorAll('.segment-card').forEach(function(card){
+      if (card.getBoundingClientRect().height > 0) fitCardText(card);
+    });
+  }
+
+  setTimeout(fitAll, 200);
+  window.addEventListener('resize', function(){ setTimeout(fitAll, 100); });
+  window.addEventListener('load', fitAll);
+
+  // Mobile: Read More expands card
+  document.querySelectorAll('.div-block-89').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (window.innerWidth > 767) return;
+      var card = btn.closest('.segment-card');
+      var box  = btn.closest('.div-block-160');
+      var fulls = box ? box.querySelectorAll('.full-description') : [];
+      if (fulls.length === 0 || !card) return;
+
+      // Show all full descriptions
+      fulls.forEach(function(full){
+        full.style.display = 'block';
+        full.style.fontFamily = 'Gretasanspro Reg, Georgia, sans-serif';
+        full.style.fontWeight = '400';
+      });
+      btn.style.display = 'none';
+
+      // Hide image, make blue card take full space
+      var imgs = card.querySelectorAll('.image-19,.image-20,.image-21');
+      var defaultDivs = card.querySelectorAll('.div-block-169, .div-block-168, .div-block-167');
+      imgs.forEach(function(img){ img.style.display = 'none'; });
+      defaultDivs.forEach(function(d){ d.style.display = 'none'; });
+
+      // Make card and box completely auto height - no constraints
+      card.style.height = 'auto';
+      card.style.minHeight = 'auto';
+      card.style.maxHeight = 'none';
+      card.style.overflow = 'visible';
+      
+      box.style.position = 'static';
+      box.style.height = 'auto';
+      box.style.minHeight = 'auto';
+      box.style.maxHeight = 'none';
+      box.style.overflow = 'visible';
+      box.style.top = 'auto';
+      box.style.left = 'auto';
+      box.style.right = 'auto';
+      box.style.bottom = 'auto';
+      
+      // Scroll to card
+      setTimeout(function(){
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    });
+  });
+
+  // Mobile: X button restores card
+  document.querySelectorAll('.image-77').forEach(function(xBtn){
+    xBtn.addEventListener('click', function(){
+      if (window.innerWidth > 767) return;
+      var card = xBtn.closest('.segment-card');
+      var box  = xBtn.closest('.div-block-160');
+      if (!card || !box) return;
+      
+      // Restore fixed heights
+      card.style.height = '';
+      card.style.minHeight = '500px';
+      card.style.maxHeight = '';
+      card.style.overflow = 'hidden';
+      
+      box.style.position = 'absolute';
+      box.style.height = '100%';
+      box.style.minHeight = '';
+      box.style.maxHeight = '';
+      box.style.overflow = 'hidden';
+      box.style.top = '0';
+      box.style.left = '0';
+      box.style.right = '0';
+      box.style.bottom = '0';
+      
+      // Show images and default divs again
+      var imgs = card.querySelectorAll('.image-19,.image-20,.image-21');
+      var defaultDivs = card.querySelectorAll('.div-block-169, .div-block-168, .div-block-167');
+      imgs.forEach(function(img){ 
+        img.style.display = '';
+        img.style.height = '';
+        img.style.minHeight = '';
+      });
+      defaultDivs.forEach(function(d){ d.style.display = ''; });
+      
+      // Hide all full descriptions
+      var fulls = box.querySelectorAll('.full-description');
+      fulls.forEach(function(full){ full.style.display = 'none'; });
+      var readMore = box.querySelector('.div-block-89');
+      if (readMore) readMore.style.display = 'flex';
+    });
+  });
+
 });
 </script>
 </body>

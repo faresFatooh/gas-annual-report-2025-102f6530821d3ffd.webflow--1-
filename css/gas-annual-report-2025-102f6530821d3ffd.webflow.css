@@ -1233,6 +1233,7 @@
   padding: 0;
   position: relative;
   overflow: hidden;
+  
 }
 
 .segment-card._2 {
@@ -1245,7 +1246,7 @@
 .image-19 {
   border-radius: 20px;
   width: 100%;
-  height: 420px;
+  height: 550px;
   object-fit: cover;
   display: block;
 }
@@ -1256,7 +1257,7 @@
   object-position: 50% 50%;
   border-radius: 20px;
   width: 100%;
-  height: 420px;
+  height: 550px;
 }
 
 .quick-stack-3 {
@@ -2112,7 +2113,7 @@
 .text-block-16 {
   color: #fff;
   font-family: Gretasanspro Reg, Georgia, sans-serif;
-  font-size: clamp(16px, 1.8vw, 24px);
+  font-size: clamp(9px, 0.7vw, 11px);
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -2153,6 +2154,7 @@
   align-items: center;
   height: auto;
   margin-top: clamp(8px, 1vw, 12px);
+  margin-bottom: 20px;
   display: flex;
   gap: 8px;
 }
@@ -4133,7 +4135,7 @@
   z-index: 3;
   height: 100%;
   min-height: 0;
-  padding: clamp(15px, 2vw, 25px);
+  padding: 30px clamp(15px, 2vw, 25px) 50px;
   display: flex;
   position: absolute;
   top: 0;
@@ -4142,7 +4144,7 @@
   bottom: 0;
   box-sizing: border-box;
   border-radius: 20px;
-  overflow-y: auto;
+  overflow: hidden;
   background-color: #0d94c8;
   flex-direction: column;
   opacity: 0;
@@ -8156,7 +8158,7 @@
   }
 
   .image-20 {
-    height: 650px;
+    height: 420px;
   }
 
   .image-21 {
@@ -13757,4 +13759,105 @@
 
 @media screen and (max-width: 767px) {
   .section-28 { padding-top: 50px !important; }
+}
+
+/* ===== Segment cards mobile - taller for text fit ===== */
+@media screen and (max-width: 767px) {
+  .segment-card {
+    aspect-ratio: auto !important;
+    min-height: unset !important;
+  }
+  #card-1 .segment-card {
+    min-height: 500px !important;
+  }
+  .div-block-160 {
+    overflow: visible !important;
+    position: absolute !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+}
+@media screen and (max-width: 479px) {
+  .segment-card {
+    aspect-ratio: auto !important;
+  }
+}
+
+/* ===== Segment hover card mobile text ===== */
+@media screen and (max-width: 767px) {
+  .div-block-160 .heading-61 {
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4px !important;
+  }
+  .div-block-160 .div-block-293 {
+    margin-bottom: 4px !important;
+  }
+  .div-block-160 {
+    padding: 12px !important;
+  }
+}
+
+/* ===== Segment card images fill card height on mobile ===== */
+
+/* ===== Segment card images match card height on mobile ===== */
+
+/* ===== Segment card - remove padding on mobile so image fills card ===== */
+@media screen and (max-width: 767px) {
+  .segment-card {
+    padding: 0 !important;
+    overflow: visible !important;
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+  .image-19, .image-20, .image-21 {
+    width: 100% !important;
+    height: 500px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+  }
+}
+
+/* ===== Segment card images - consistent height all desktop screens ===== */
+@media screen and (min-width: 768px) {
+  .quick-stack-2.div-block-167 {
+    gap: 12px !important;
+  }
+  .div-block-166, .div-block-164, .div-block-165 {
+    flex: 1;
+    min-width: 0;
+  }
+  .segment-card {
+    height: 30vw !important;
+    min-height: 300px !important;
+    max-height: 600px !important;
+    border-radius: 20px !important;
+  }
+  .div-block-169, .div-block-168, .div-block-167 {
+    height: 100%;
+  }
+  .image-19, .image-20 {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* ===== Full description same font as main text ===== */
+.full-description {
+  font-family: Gretasanspro Reg, Georgia, sans-serif !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+}
+.text-block-16 {
+  font-family: Gretasanspro Reg, Georgia, sans-serif !important;
+  font-weight: 400 !important;
+}
+.full-description.text-block-16 {
+  font-family: Gretasanspro Reg, Georgia, sans-serif !important;
+  font-weight: 400 !important;
 }
