@@ -970,14 +970,13 @@ $(document).ready(function() {
     overflow: hidden;
   }
   [id^="hover-content-"] {
-    display: none;
-    flex-direction: column !important;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
   }
   [id^="card-"]:hover [id^="hover-content-"] {
-    display: flex !important;
     opacity: 1;
+    pointer-events: auto;
   }
 </style>
   <script>

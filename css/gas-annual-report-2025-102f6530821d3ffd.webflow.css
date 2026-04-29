@@ -2278,12 +2278,12 @@
 
 .paragraph-4 {
   color: #fff;
-  width: 65%;
+  width: clamp(65%, 80vw, 90%);
   font-family: Gretasanspro Lt, Georgia, sans-serif;
 }
 
 .paragraph-4.ar {
-  width: 65%;
+  width: clamp(65%, 80vw, 90%);
   font-family: Gretaarabicar, Georgia, sans-serif;
   font-size: 18px;
   line-height: 23px;
@@ -3848,12 +3848,14 @@
 .heading-37 {
   color: #143345;
   font-family: Gretasanspro Bld, Georgia, sans-serif;
+  font-size: clamp(24px, 4vw, 60px);
+  line-height: clamp(28px, 4.5vw, 70px);
 }
 
 .heading-37.ar {
   color: #fff;
-  font-size: 50px;
-  line-height: 60px;
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: clamp(40px, 6vw, 70px);
 }
 
 .heading-38 {
@@ -3866,16 +3868,16 @@
   color: #fff;
   margin-top: 80px;
   font-family: Gretasanspro Bld, Georgia, sans-serif;
-  font-size: 62px;
-  line-height: 70px;
+  font-size: clamp(40px, 6vw, 90px);
+  line-height: clamp(50px, 7vw, 100px);
 }
 
 .heading-39.ar {
   color: #143345;
   margin-top: 50px;
   margin-bottom: 50px;
-  font-size: 45px;
-  line-height: 50px;
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: clamp(40px, 6vw, 70px);
 }
 
 .paragraph-14 {
@@ -3886,13 +3888,13 @@
   color: #fff;
   width: 55%;
   font-family: Gretasanspro Bld, Georgia, sans-serif;
-  font-size: 23px;
-  line-height: 30px;
+  font-size: clamp(16px, 2.5vw, 28px);
+  line-height: clamp(24px, 3.5vw, 40px);
 }
 
 .paragraph-15.ar {
-  font-size: 28px;
-  line-height: 35px;
+  font-size: clamp(20px, 3vw, 40px);
+  line-height: clamp(28px, 4vw, 50px);
 }
 
 .section-27 {
@@ -3955,26 +3957,28 @@
 
 .heading-40 {
   color: #0d94c8;
-  font-size: 80px;
-  line-height: 80px;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: clamp(48px, 7vw, 100px);
 }
 
 .heading-40.ar {
   margin-right: 15px;
-  font-size: 80px;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: clamp(48px, 7vw, 100px);
 }
 
 .heading-41 {
   color: #0d94c8;
   margin-right: 15px;
   font-family: Gretasanspro Bld, Georgia, sans-serif;
-  font-size: 80px;
-  line-height: 80px;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: clamp(48px, 7vw, 100px);
 }
 
 .heading-41.ar {
   margin-right: 0;
-  font-size: 80px;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: clamp(48px, 7vw, 100px);
 }
 
 .div-block-155 {
@@ -3998,12 +4002,14 @@
   color: #143345;
   margin-left: 20px;
   font-family: Gretasanspro Med, Georgia, sans-serif;
-  font-size: 23px;
-  line-height: 30px;
+  font-size: clamp(16px, 2.5vw, 28px);
+  line-height: clamp(24px, 3.5vw, 40px);
 }
 
 .paragraph-16.ar {
   margin-right: 50px;
+  font-size: clamp(20px, 3vw, 40px);
+  line-height: clamp(28px, 4vw, 50px);
 }
 
 .section-29 {
@@ -4116,7 +4122,7 @@
   justify-content: flex-start;
   gap: clamp(8px, 1vw, 12px);
 }
-}
+
 
 .div-block-160[style*="display: flex"] {
   display: flex !important;
@@ -4225,6 +4231,8 @@
 .heading-44 {
   color: #143345;
   font-family: Gretasanspro Bld, Georgia, sans-serif;
+  font-size: clamp(28px, 5vw, 70px);
+  line-height: clamp(32px, 5.5vw, 80px);
 }
 
 .image-56 {
@@ -4240,8 +4248,9 @@
 
 .image-58 {
   background-image: linear-gradient(#0000 72%, #0d94c8 73%);
-  max-width: 100%;
-  margin: -60% 0% 0%;
+  width: calc(100% - 160px);
+  margin: -60% auto 0;
+  display: block;
 }
 
 .image-58.ar {
@@ -4270,6 +4279,7 @@
 
 .section-32 {
   margin-top: -10px;
+  padding: 0 80px;
 }
 
 .image-60 {
@@ -7754,12 +7764,11 @@
   }
 
   .heading-37 {
-    font-size: 60px;
-    line-height: 60px;
+    /* Fluid sizing handled by clamp() */
   }
 
   .heading-39 {
-    font-size: 60px;
+    /* Fluid sizing handled by clamp() */
   }
 
   .paragraph-14 {
@@ -8491,8 +8500,8 @@
 
   .image-58 {
     background-image: linear-gradient(#0000 67%, #0d94c8 73%);
-    width: 100%;
-    margin-top: -80%;
+    width: calc(100% - 160px);
+    margin: -80% auto 0;
   }
 
   .image-59 {
@@ -9612,6 +9621,7 @@
 
   .section-32 {
     margin-top: -10px;
+    padding: 0 80px;
   }
 
   .image-60 {
@@ -10882,7 +10892,8 @@
 
   .image-58 {
     background-color: #0d94c8;
-    margin-top: 0%;
+    width: calc(100% - 32px);
+    margin: 0 auto;
   }
 
   .div-block-174 {
@@ -12087,7 +12098,8 @@
 
   .div-block-160 {
     height: auto;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .cell-7 {
@@ -12141,6 +12153,7 @@
   .section-32 {
     background-color: #0d94c8;
     margin-top: -10px;
+    padding: 0 16px;
   }
 
   .image-60 {
