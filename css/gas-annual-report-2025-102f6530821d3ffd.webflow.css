@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
   font-family: Gretaarabicar;
   src: url('../fonts/GretaArabicAR-Regular.otf') format("opentype"), url('../fonts/GretaArabicAR-Regular.otf') format("opentype");
   font-weight: 400;
@@ -2018,7 +2018,7 @@
 }
 
 .div-block-86 {
-  grid-column-gap: 16px;
+  grid-column-gap: clamp(20px, 3vw, 50px);
   grid-row-gap: 16px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr;
@@ -2026,12 +2026,17 @@
   width: 100%;
   margin-top: 20px;
   display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .div-block-87 {
   justify-content: center;
   align-items: center;
   display: flex;
+  gap: clamp(10px, 1.5vw, 20px);
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .div-block-87._3 {
@@ -2041,17 +2046,23 @@
 
 .text-block-15 {
   color: #133344;
-  padding-left: 5px;
+  padding: 0;
   font-family: Gretasanspro Med, Georgia, sans-serif;
   font-size: 16px;
+  white-space: nowrap;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .text-block-15._2 {
   color: #0c93c8;
   text-align: center;
   white-space: nowrap;
-  margin-top: 0;
-  padding-left: 10px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .text-block-15._2.ar {
@@ -2060,6 +2071,8 @@
 
 .text-block-15._3 {
   color: #00a54f;
+  display: flex;
+  align-items: center;
 }
 
 .text-block-15.ar {
@@ -2073,25 +2086,37 @@
 .div-block-88 {
   background-color: #133344;
   border-radius: 20px;
-  flex: 0 auto;
+  flex: 0 0 auto;
   width: 30px;
   height: 5px;
-  margin-top: 5px;
+  margin: 0;
+  align-self: center;
+  vertical-align: middle;
+  transform: translateY(-10px);
 }
 
 .div-block-88._2 {
   background-color: #0c93c8;
-  margin-top: 5px;
+  margin: 0;
+  align-self: center;
+  transform: translateY(-10px);
 }
 
 .div-block-88._3 {
   background-color: #00a54f;
+  margin: 0;
+  align-self: center;
+  transform: translateY(-10px);
 }
 
 .text-block-16 {
   color: #fff;
   font-family: Gretasanspro Reg, Georgia, sans-serif;
-  font-size: 15px;
+  font-size: clamp(16px, 1.8vw, 24px);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin: 0;
 }
 
 .text-block-16.arr {
@@ -2102,16 +2127,19 @@
 
 .bold-text {
   color: #fff;
-  font-family: Gretasanspro Reg, Georgia, sans-serif;
-  font-size: 30px;
+  font-family: Gretasanspro Med, Georgia, sans-serif;
+  font-size: clamp(26px, 2.2vw, 40px);
   font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .text-block-17 {
   color: #fff;
   margin-top: 0;
   font-family: Gretasanspro Med, Georgia, sans-serif;
-  font-size: 17px;
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 
@@ -2124,12 +2152,15 @@
   justify-content: flex-start;
   align-items: center;
   height: auto;
-  margin-top: 20px;
+  margin-top: clamp(8px, 1vw, 12px);
   display: flex;
+  gap: 8px;
 }
 
 .image-34 {
-  margin-left: 10px;
+  margin-left: 0;
+  width: clamp(16px, 1.2vw, 24px);
+  height: auto;
 }
 
 .image-34.ar {
@@ -4067,8 +4098,8 @@
   z-index: 3;
   height: 100%;
   min-height: 0;
-  padding: 15px;
-  display: none;
+  padding: clamp(15px, 2vw, 25px);
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -4078,6 +4109,22 @@
   border-radius: 20px;
   overflow-y: auto;
   background-color: #0d94c8;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  justify-content: flex-start;
+  gap: clamp(8px, 1vw, 12px);
+}
+}
+
+.div-block-160[style*="display: flex"] {
+  display: flex !important;
+}
+
+.segment-card:hover .div-block-160 {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .div-block-161 {
@@ -6338,13 +6385,20 @@
   justify-content: flex-start;
   align-items: center;
   display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .heading-61 {
   color: #fff;
   flex: 1;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: clamp(26px, 2.2vw, 40px);
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: Gretasanspro Med, Georgia, sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  margin-top: 0;
 }
 
 .heading-61.ar {
@@ -6353,8 +6407,14 @@
 }
 
 .image-77 {
-  width: 30px;
-  height: 30px;
+  width: clamp(20px, 1.5vw, 28px);
+  height: clamp(20px, 1.5vw, 28px);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-77:hover {
+  transform: scale(1.1);
 }
 
 .div-block-294 {
@@ -13256,14 +13316,15 @@
     border-radius: clamp(12px, 1.2vw, 24px);
   }
   .heading-61 {
-    font-size: clamp(22px, 1.8vw, 38px);
+    font-size: clamp(26px, 2.2vw, 40px);
     line-height: 1.2;
+    margin-bottom: 8px;
   }
   .text-block-16 {
-    font-size: clamp(13px, 0.95vw, 18px);
+    font-size: clamp(16px, 1.8vw, 24px);
     line-height: 1.5;
   }
   .text-block-17 {
-    font-size: clamp(14px, 1vw, 20px);
+    font-size: clamp(16px, 1.5vw, 20px);
   }
 }

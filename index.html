@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6947c050c911bc4da703773c" data-wf-site="6947c050c911bc4da703773d">
 <head>
   <meta charset="utf-8">
@@ -411,7 +411,7 @@
       setupObserver();
     })();
   })();
-  })();
+
 </script>
     </div>
   </section>
@@ -972,6 +972,12 @@ $(document).ready(function() {
   [id^="hover-content-"] {
     display: none;
     flex-direction: column !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  [id^="card-"]:hover [id^="hover-content-"] {
+    display: flex !important;
+    opacity: 1;
   }
 </style>
   <script>
@@ -1006,21 +1012,7 @@ $(document).ready(function() {
     $(this).hide();
     $readMoreBtn.show();
   });
-  // منطق الهوفر
-  $('[id^="card-"]').hover(
-    function() {
-      if (!$('.hide-now').length) {
-        $(this).find('[id^="default-"]').hide();
-        $(this).find('[id^="hover-content-"]').css('display', 'flex');
-      }
-    },
-    function() {
-      if (!$('.hide-now').length) {
-        $(this).find('[id^="hover-content-"]').hide();
-        $(this).find('[id^="default-"]').fadeIn(200);
-      }
-    }
-  );
+  // لا نحتاج hover logic - الـ CSS بتتولاه
 });
 </script>
   <script src="https://unpkg.com/split-type"></script>
