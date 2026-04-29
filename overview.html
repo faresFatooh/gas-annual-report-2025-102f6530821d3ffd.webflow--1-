@@ -24,6 +24,198 @@
     overflow-x: hidden !important;
     position: relative;
   }
+  
+  /* تكبير حجم النقاط (البوليت بوينتس) على الجوال */
+  @media (max-width: 767px) {
+    .inv-pillar-card {
+      font-size: 12px !important;
+      line-height: 1.8 !important;
+    }
+    
+    /* تصغير الفقرة */
+    .paragraph-10 {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+    
+    /* تصغير العنوان Our Investment Case */
+    .heading-29._741 {
+      font-size: 22px !important;
+      line-height: 25px !important;
+    }
+    
+    /* تكبير الصورة وإزالة المارجن */
+    .inv-img-wrap {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      height: auto !important;
+    }
+    
+    .inv-img {
+      height: auto !important;
+      object-fit: cover !important;
+      width: 100% !important;
+    }
+    
+    .inv-pillars-grid {
+      gap: 12px !important;
+      padding: 20px !important;
+      bottom: auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: linear-gradient(to right, rgba(20,51,69,0.75) 100%, rgba(20,51,69,0.6) 100%) !important;
+    }
+    
+    /* جعل السكشن يستوعب كل النص وإزالة الـ padding من الأسفل وتقليل من الأعلى */
+    .section-23 {
+      padding-top: 30px !important;
+      padding-bottom: 0 !important;
+      min-height: auto !important;
+      height: auto !important;
+    }
+    
+    .inv-case-wrap {
+      height: auto !important;
+      min-height: auto !important;
+    }
+    
+    /* تعديل قسم Business mix على الجوال */
+    .gas-charts-grid .gas-chart-card:first-child .div-block-112 {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    .gas-charts-grid .gas-chart-card:first-child .div-block-311 {
+      display: none !important;
+    }
+    
+    .gas-charts-grid .gas-chart-card:first-child .div-block-117 {
+      order: 1 !important;
+      width: 100% !important;
+      max-width: 280px !important;
+      margin: 0 auto !important;
+    }
+    
+    /* إخفاء الـ legend القديم على الجوال */
+    #mobile-legend-1 {
+      display: none !important;
+    }
+    
+    /* تعديل قسم Revenue Contribution على الجوال */
+    .gas-charts-grid .gas-chart-card:nth-child(2) .div-block-112 {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    .gas-charts-grid .gas-chart-card:nth-child(2) .div-block-311 {
+      display: none !important;
+    }
+    
+    .gas-charts-grid .gas-chart-card:nth-child(2) .div-block-170 {
+      display: none !important;
+    }
+    
+    .gas-charts-grid .gas-chart-card:nth-child(2) .div-block-117 {
+      order: 1 !important;
+      width: 100% !important;
+      max-width: 280px !important;
+      margin: 0 auto !important;
+    }
+    
+    /* إخفاء الـ legend القديم على الجوال */
+    #mobile-legend-2 {
+      display: none !important;
+    }
+    
+    /* إظهار الـ legend الجديد على الجوال */
+    @media (max-width: 767px) {
+      #mobile-legend-1,
+      #mobile-legend-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        margin-top: 25px !important;
+        width: 100% !important;
+        order: 2 !important;
+      }
+      
+      .mobile-legend-item {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        white-space: nowrap !important;
+      }
+      
+      .mobile-legend-item:nth-child(1),
+      .mobile-legend-item:nth-child(2) {
+        justify-content: center !important;
+      }
+      
+      .mobile-legend-item.mobile-legend-center {
+        justify-content: center !important;
+        width: 100% !important;
+      }
+      
+      .mobile-legend-color {
+        width: 20px !important;
+        height: 4px !important;
+        border-radius: 2px !important;
+        flex-shrink: 0 !important;
+      }
+      
+      .mobile-legend-text {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        font-family: 'Gretasanspro Bld', 'Greta Sans Pro', sans-serif !important;
+        color: #333 !important;
+      }
+      
+      /* تعديل قسم National network على الجوال */
+      .section-19 .quick-stack-5 {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+      
+      .section-19 .w-layout-cell {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+      
+      .section-19 .cell-7,
+      .section-19 .cell-6,
+      .section-19 .cell-8 {
+        width: 100% !important;
+      }
+      
+      .section-19 .div-block-104 {
+        min-height: auto !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        padding: 15px !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 4px !important;
+      }
+      
+      .section-19 .heading-28 {
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+        margin-top: 0 !important;
+      }
+      
+      .section-19 .paragraph-8 {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+      }
+      
+      .section-19 .div-block-172 {
+        display: none !important;
+      }
+    }
+  }
 </style>
 </head>
 <body class="body">
@@ -438,6 +630,22 @@
         <div class="div-block-117">
           <canvas id="ovDonut1" style="width:100%;height:100%;display:block;"></canvas>
         </div>
+        <div id="mobile-legend-1" class="mobile-legend-container">
+          <div style="display: flex; gap: 20px; justify-content: center; width: 100%;">
+            <div class="mobile-legend-item">
+              <div class="mobile-legend-color" style="background-color: #143345;"></div>
+              <span class="mobile-legend-text">33.3% Trading</span>
+            </div>
+            <div class="mobile-legend-item">
+              <div class="mobile-legend-color" style="background-color: #0D94C8;"></div>
+              <span class="mobile-legend-text">63.9% Technical Services</span>
+            </div>
+          </div>
+          <div class="mobile-legend-item mobile-legend-center" style="margin-top: 10px;">
+            <div class="mobile-legend-color" style="background-color: #00A64F;"></div>
+            <span class="mobile-legend-text">2.8% Manufacturing</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -471,6 +679,32 @@
         </div>
         <div class="div-block-117">
           <canvas id="ovDonut2" style="width:100%;height:100%;display:block;"></canvas>
+        </div>
+        <div id="mobile-legend-2" class="mobile-legend-container">
+          <div style="display: flex; gap: 20px; justify-content: center; width: 100%; flex-wrap: wrap;">
+            <div class="mobile-legend-item">
+              <div class="mobile-legend-color" style="background-color: #143345;"></div>
+              <span class="mobile-legend-text">64.75% Eastern Region</span>
+            </div>
+            <div class="mobile-legend-item">
+              <div class="mobile-legend-color" style="background-color: #0D94C8;"></div>
+              <span class="mobile-legend-text">28.40% Central Region</span>
+            </div>
+          </div>
+          <div class="mobile-legend-item mobile-legend-center" style="margin-top: 10px;">
+            <div class="mobile-legend-color" style="background-color: #00A64F;"></div>
+            <span class="mobile-legend-text">6.04% Western Region</span>
+          </div>
+          <div style="display: flex; gap: 20px; justify-content: center; width: 100%; margin-top: 10px;">
+            <div class="mobile-legend-item">
+              <div class="mobile-legend-color" style="background-color: #7EC8E3;"></div>
+              <span class="mobile-legend-text">0.13% Northern Region</span>
+            </div>
+            <div class="mobile-legend-item">
+              <div class="mobile-legend-color" style="background-color: #AAAAAA;"></div>
+              <span class="mobile-legend-text">0.68% Southern Region</span>
+            </div>
+          </div>
         </div>
         <div class="div-block-170">
           <div class="div-block-116">
