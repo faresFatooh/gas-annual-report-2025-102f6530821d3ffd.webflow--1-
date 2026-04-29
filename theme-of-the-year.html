@@ -286,15 +286,18 @@
     </div>
   </section>
   <section class="section-32">
-    <div class="div-block-174">
-      <div class="div-block-176"><img src="images/Group-75.png" loading="lazy" width="531" sizes="(max-width: 767px) 100vw, 531px" alt="" srcset="images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-500.png 500w, images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-800.png 800w, images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-1080.png 1080w, images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-1600.png 1600w, images/Group-75.png 1842w" class="image-60"></div>
-      <div class="div-block-177"><img src="images/Artboard-12x-1.png" loading="lazy" sizes="(max-width: 920px) 100vw, 920px" srcset="images/Artboard-12x-1-p-500.png 500w, images/Artboard-12x-1-p-800.png 800w, images/Artboard-12x-1.png 920w" alt="" class="image-59"></div>
-      <img src="images/TOTY-1.png" loading="lazy" width="Auto" sizes="(max-width: 1848px) 100vw, 1848px" alt="" srcset="images/TOTY-1-p-500.png 500w, images/TOTY-1-p-800.png 800w, images/TOTY-1-p-1080.png 1080w, images/TOTY-1-p-1600.png 1600w, images/TOTY-1.png 1848w" class="image-58">
+    <div class="toty-hero">
+      <img src="images/Group 109.png" loading="lazy" alt="" class="toty-bg-img">
       <div class="div-block-152">
         <h1 class="heading-44"><strong class="bold-text-2">THEME OF THE YEAR</strong></h1>
         <h3 class="heading-37"><strong class="bold-text-3">From Nomu to TASI</strong></h3>
         <h1 class="heading-39"><strong class="bold-text-4">A JOURNEY OF<br>BALANCED EXPANSION</strong></h1>
-        <p letters-fade-in="" text-split="" class="paragraph-15 paragraph-14">GAS Arabian Services’ journey through 2025 was defined by disciplined execution and a measured step-up to the Saudi Exchange Main Market. Approval to transfer was granted on 16 September 2025, with trading commencing on 9 October 2025 under ticker 4146.<br>Amid rising activity across the Kingdom’s gas, power, and industrial sectors, we advanced our integrated model in Technical Services, Trading, and Manufacturing to convert opportunity into dependable outcomes. By pairing governance maturity with operating rigor, we strengthened backlog quality, deepened customer partnerships, and reinforced the capabilities that sustain reliable, lower-carbon, in-Kingdom growth.</p>
+        <p letters-fade-in="" text-split="" class="paragraph-15 paragraph-14">GAS Arabian Services' journey through 2025 was defined by disciplined execution and a measured step-up to the Saudi Exchange Main Market. Approval to transfer was granted on 16 September 2025, with trading commencing on 9 October 2025 under ticker 4146.<br>Amid rising activity across the Kingdom's gas, power, and industrial sectors, we advanced our integrated model in Technical Services, Trading, and Manufacturing to convert opportunity into dependable outcomes. By pairing governance maturity with operating rigor, we strengthened backlog quality, deepened customer partnerships, and reinforced the capabilities that sustain reliable, lower-carbon, in-Kingdom growth.</p>
+      <!-- Mobile NOMU TASI -->
+      <div class="toty-mobile-nomu">
+        <h1 class="heading-41">NOMU</h1><img src="images/Group-10.png" loading="lazy" alt="" class="image-51">
+        <h1 class="heading-40">TASI</h1>
+      </div>
       </div>
     </div>
   </section>
@@ -441,6 +444,48 @@ window.addEventListener("DOMContentLoaded", (event) => {
 </script>
 <script>
 // Removed - image-58 now in normal flow inside div-block-174
+</script>
+
+<script>
+// Auto-fit text in toty-hero so paragraph ends at TARGET% of section height
+(function() {
+  var TARGET = 0.50; // 50% - change this value to adjust
+  var MIN_FONT = 8;
+  var MAX_FONT = 40;
+
+  function fitText() {
+    var hero = document.querySelector('.toty-hero');
+    var para = document.querySelector('.toty-hero .paragraph-15');
+    var block = document.querySelector('.toty-hero .div-block-152');
+    if (!hero || !para || !block) return;
+
+    var heroH = hero.getBoundingClientRect().height;
+    if (heroH < 50) return;
+    var targetBottom = heroH * TARGET;
+
+    // Binary search for the right font size
+    var lo = MIN_FONT, hi = MAX_FONT, best = MIN_FONT;
+    for (var iter = 0; iter < 20; iter++) {
+      var mid = (lo + hi) / 2;
+      para.style.fontSize = mid + 'px';
+      para.style.lineHeight = '1.6';
+      var paraBottom = para.getBoundingClientRect().bottom - hero.getBoundingClientRect().top;
+      if (paraBottom <= targetBottom) {
+        best = mid;
+        lo = mid;
+      } else {
+        hi = mid;
+      }
+    }
+    para.style.fontSize = best + 'px';
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(fitText, 100);
+  });
+  window.addEventListener('load', fitText);
+  window.addEventListener('resize', fitText);
+})();
 </script>
 </body>
 </html>
