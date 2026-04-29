@@ -1,0 +1,1226 @@
+﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="6947c050c911bc4da703773c" data-wf-site="6947c050c911bc4da703773d">
+<head>
+  <meta charset="utf-8">
+  <title>GAS - Annual Report</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/gas-annual-report-2025-102f6530821d3ffd.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <script>
+  document.documentElement.lang = "en";
+</script>
+  <style>
+  /* إجبار المتصفح على منع السكرول الأفقي لكامل الموقع */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+  }
+
+  /* ===== Large Screen / 4K Responsive ===== */
+  /* Hero section full-width */
+  .section-4 { max-width: 100%; }
+
+  /* ===== Donut Chart ===== */
+  #gas-donut-outer { box-sizing: border-box; }
+  #gas-donut-inner { box-sizing: border-box; }
+  .dashboard-card.padding-small {
+    display: none !important;
+  }
+</style>
+</head>
+<body>
+  <section id="s1">
+    <div class="w-embed w-script">
+      <style>
+  :root { 
+    --header-h: 110px;
+    --nav-h: 54px;
+    --offset: calc(var(--header-h) + var(--nav-h));
+    --font-main: 'Greta Sans Pro English', 'Greta Sans Pro', sans-serif;
+    --font-ar: 'Gretaarabicar', sans-serif; 
+  }
+  body { 
+    direction: ltr; 
+    text-align: left; 
+    font-family: var(--font-main);
+    padding-top: var(--header-h); 
+    margin: 0; 
+  }
+  @media screen and (min-width: 1440px) {
+    :root { --header-h: calc(15px + clamp(80px, 5vw, 100px) + 15px); }
+  }
+  /* ===== Header ===== */
+  .header {
+    background: #003E79;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1001; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+  }
+  .logo img { height: 80px; width: auto; object-fit: contain; }
+  .report-title {
+    border-left: 1px solid rgba(255,255,255,0.35); 
+    padding-left: 18px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    flex-shrink: 0;
+  }
+  .year-text { font-size: 28px; font-weight: 400; line-height: 1; color:#fff; }
+  .sub-text  { font-size: 16px; opacity: 0.9; margin-top: 6px; color:#fff; white-space: nowrap; }
+  .mobile-v-line { display: none; }
+  .search-container { flex: 1; margin: 0 40px; }
+  .search-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: white; padding: 8px 0; font-size: 16px; outline: none; font-family: var(--font-main); text-align: left;
+  }
+  .header-icons { display: flex; gap: 25px; align-items: center; flex-shrink: 0; }
+  .icon-btn { background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
+  .icon-btn img { width: 32px; height: 32px; }
+  .icon-btn svg { width: 24px; height: 24px; color: white; }
+  .lang-text { color: white; font-weight: 700; font-size: 17px; font-family: var(--font-ar); }
+  .burger-btn {
+    display: none; flex-direction: column; justify-content: space-around; background: transparent; border: none; width: 30px; height: 24px; cursor: pointer;
+  }
+  .burger-btn span { display: block; width: 100%; height: 3px; background: white; border-radius: 2px; }
+  /* ===== Navigation & Mobile Menu ===== */
+  .navigation {
+    position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 1000;
+    background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px);
+  }
+  /* Large screen: header grows with logo, nav must follow */
+  @media screen and (min-width: 1440px) {
+    .navigation { top: calc(15px + clamp(80px, 5vw, 100px) + 15px); }
+  }
+  .nav-list { 
+    max-width: 1920px; 
+    margin: 0 auto; 
+    list-style: none; 
+    display: flex; 
+    padding: 15px 40px; 
+    gap: 25px; 
+    justify-content: center;
+  }
+  .nav-link { 
+    color: #FFFFFF; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: clamp(13px, 1.1vw, 16px); 
+    padding: 5px 0; 
+    font-family: var(--font-main); 
+    transition: 0.3s; 
+    text-transform: uppercase;
+    white-space: nowrap; 
+  }
+  .nav-link:hover, .nav-link.active { color: #0D94C8 !important; }
+  .mobile-menu-footer { display: none; }
+  /* ===== Responsive Mobile ===== */
+  @media (max-width: 991px) {
+    :root { --header-h: 75px; --nav-h: 0px; } 
+    body { padding-top: var(--header-h); }
+    .header { padding: 8px 10px; height: var(--header-h); display: flex; align-items: center; }
+    .header-left { gap: 8px; }
+    .logo img { height: 38px; }
+    .mobile-v-line { display: block; width: 1px; height: 22px; background: rgba(255, 255, 255, 0.35); margin-left: 2px; }
+    .report-title { border: none; padding-left: 5px; height: auto; gap: 0; }
+    .year-text { font-size: 16px; line-height: 1.1; }
+    .sub-text { display: block; font-size: 10px; margin-top: 0; white-space: nowrap; font-weight: 500; }
+    .search-container { display: block; margin: 0 12px; flex: 2; }
+    .search-input { font-size: 14px; padding: 2px 0; }
+    .header-icons { gap: 10px; }
+    .header-icons .icon-btn:not(#searchBtn) { display: none; }
+    .burger-btn { display: flex; }
+    .navigation { 
+      top: 0; height: 100dvh; max-height: 0; opacity: 0; 
+      background: #003E79; transition: 0.4s ease; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .navigation.open { max-height: 100dvh; opacity: 1; }
+    .nav-list { flex-direction: column; padding: 100px 20px 20px; align-items: center; gap: 0; overflow-y: auto; flex: 1; }
+    .nav-list li { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { display: block; font-size: 16px; padding: 18px; white-space: normal; }
+    /* التعديل المطلوب هنا */
+    .mobile-menu-footer {
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      gap: 60px; 
+      padding: 25px;
+      background: rgba(0,0,0,0.1); 
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-menu-footer .icon-btn { 
+        display: flex !important; 
+        justify-content: center; 
+        align-items: center;
+    }
+  }
+
+  /* ===== Large Screen Header/Nav ===== */
+  @media screen and (min-width: 1440px) {
+    .header { padding: 15px clamp(40px, 4vw, 100px); }
+    .header-content { max-width: 1920px; }
+    .nav-list { max-width: 1920px; padding: 15px clamp(40px, 4vw, 100px); gap: clamp(25px, 2vw, 50px); }
+    .nav-link { font-size: clamp(13px, 0.9vw, 17px); }
+    .logo img { height: clamp(80px, 5vw, 100px); }
+    .year-text { font-size: clamp(28px, 1.8vw, 36px); }
+    .sub-text { font-size: clamp(16px, 1vw, 20px); }
+  }
+</style>
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <div class="logo">
+              <img src="images/2.png" alt="GAS Logo">
+            </div>
+            <span class="mobile-v-line"></span>
+            <div class="report-title">
+              <span class="year-text">2025</span>
+              <span class="sub-text">Annual Report</span>
+            </div>
+            <div class="search-container">
+              <input type="search" id="mainSearchInput" class="search-input" placeholder="Search" autocomplete="off">
+            </div>
+          </div>
+          <div class="header-icons">
+            <button class="icon-btn" id="searchBtn" title="Search">
+              <img src="images/S.png" alt="Search">
+            </button>
+            <a href="https://www.saudiexchange.sa/Resources/fsPdf/8047_0_2026-03-31_15-01-08_En.pdf" class="icon-btn" title="Download">
+              <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+              </svg>
+            </a>
+            <a href="home-ar.html" class="icon-btn" title="العربية">
+              <span class="lang-text">AR</span>
+            </a>
+            <button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button>
+          </div>
+        </div>
+      </header>
+      <nav class="navigation" id="navBar">
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link active">Home</a>
+          </li>
+          <li>
+            <a href="overview.html" class="nav-link">Overview</a>
+          </li>
+          <li>
+            <a href="theme-of-the-year.html" class="nav-link">Theme of the year</a>
+          </li>
+          <li>
+            <a href="chairmans-statement.html" class="nav-link">Chairman’s Statement</a>
+          </li>
+          <li>
+            <a href="chief-executive-officers-message.html" class="nav-link">CEO’s Message</a>
+          </li>
+          <li>
+            <a href="/directors-report" class="nav-link">Governance</a>
+          </li>
+          <li>
+            <a href="financial-statement.html" class="nav-link">Financial Statement</a>
+          </li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a href="home-ar.html" class="icon-btn"><span class="lang-text" style="font-size: 20px;">AR</span></a>
+          <a href="https://www.saudiexchange.sa/Resources/fsPdf/8047_0_2026-03-31_15-01-08_En.pdf" class="icon-btn">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+      <script>
+  (function () {
+    const nav = document.getElementById("navBar");
+    const burger = document.getElementById("burgerBtn");
+    const searchBtn = document.getElementById("searchBtn");
+    const searchInput = document.getElementById("mainSearchInput");
+    function closeMenu() {
+      nav.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    function runSearch() {
+      const query = searchInput.value.trim();
+      if (query.length < 2) return;
+      closeMenu();
+      document.querySelectorAll('mark.search-highlight').forEach(m => {
+        const text = document.createTextNode(m.textContent);
+        m.parentNode.replaceChild(text, m);
+      });
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      let found = false;
+      let node;
+      const nodes = [];
+      while(node = walker.nextNode()) {
+        if (!node.parentElement.closest('.header, .navigation, script, style')) {
+          nodes.push(node);
+        }
+      }
+      const regex = new RegExp(`(${query})`, 'gi');
+      nodes.forEach(n => {
+        const text = n.nodeValue;
+        if (regex.test(text)) {
+          const span = document.createElement('span');
+          span.innerHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
+          n.parentNode.replaceChild(span, n);
+          if (!found) {
+            span.querySelector('mark').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            found = true;
+          }
+        }
+      });
+      if(!found) alert("No results found.");
+    }
+    searchBtn.onclick = runSearch;
+    searchInput.onkeypress = (e) => { 
+      if(e.key === 'Enter') {
+        runSearch();
+        searchInput.blur();
+      }
+    };
+    burger.onclick = () => {
+      const isOpen = nav.classList.toggle("open");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    };
+    nav.querySelectorAll('.nav-list a').forEach(link => {
+      link.onclick = closeMenu;
+    });
+
+    // Dynamic offset: sync body padding with actual header height
+    function updateOffset() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const headerH = header.getBoundingClientRect().height;
+      document.body.style.paddingTop = headerH + 'px';
+    }
+    updateOffset();
+    window.addEventListener('resize', updateOffset);
+    window.addEventListener('load', updateOffset);
+    setTimeout(updateOffset, 300);
+
+    // ===== Canvas Donut Chart =====
+    (function() {
+      var canvas = document.getElementById('gasDonutCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var S = 280, cx = 140, cy = 140, Ro = 120, Ri = 72;
+      var segs = [
+        { color: '#003E79', pct: 0.639 },
+        { color: '#0d94c8', pct: 0.333 },
+        { color: '#2ecc71', pct: 0.028 }
+      ];
+
+      var logo = new Image();
+      var logoReady = false;
+      logo.onload = function() { logoReady = true; draw(1); };
+      logo.onerror = function() { logoReady = false; draw(1); };
+      logo.src = 'images/logo-dark-1.png';
+
+      function draw(progress) {
+        ctx.clearRect(0, 0, S, S);
+        var angle = -Math.PI / 2;
+        segs.forEach(function(seg) {
+          var sweep = seg.pct * Math.PI * 2 * progress;
+          if (sweep <= 0) return;
+          ctx.beginPath();
+          ctx.arc(cx, cy, Ro, angle, angle + sweep);
+          ctx.arc(cx, cy, Ri, angle + sweep, angle, true);
+          ctx.closePath();
+          ctx.fillStyle = seg.color;
+          ctx.fill();
+          angle += sweep;
+        });
+        // white center
+        ctx.beginPath();
+        ctx.arc(cx, cy, Ri - 1, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+        // logo or fallback text
+        if (logoReady) {
+          ctx.drawImage(logo, cx - 48, cy - 32, 96, 52);
+        } else {
+          ctx.fillStyle = '#003E79';
+          ctx.font = "bold 28px Arial, sans-serif";
+          ctx.textAlign = 'center';
+          ctx.fillText('GAS', cx, cy - 4);
+        }
+        ctx.fillStyle = '#003E79';
+        ctx.font = "600 14px Arial, sans-serif";
+        ctx.textAlign = 'center';
+        ctx.fillText('Segments', cx, cy + 46);
+      }
+
+      function animate() {
+        var start = null, dur = 1400;
+        function step(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var e = p < 0.5 ? 2*p*p : -1+(4-2*p)*p;
+          draw(e);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Draw immediately - works offline and online
+      draw(1);
+
+      // Animate on scroll - with fallback for file:// protocol
+      function setupObserver() {
+        if (typeof IntersectionObserver === 'undefined') {
+          // Fallback: animate on scroll event
+          var animated = false;
+          window.addEventListener('scroll', function() {
+            var rect = canvas.getBoundingClientRect();
+            var inView = rect.top < window.innerHeight && rect.bottom > 0;
+            if (inView && !animated) { animated = true; animate(); }
+            if (!inView) { animated = false; }
+          });
+          return;
+        }
+        new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) animate();
+        }, { threshold: 0.2 }).observe(canvas);
+      }
+      setupObserver();
+    })();
+  })();
+  })();
+</script>
+    </div>
+  </section>
+  <section class="section-4">
+    <div class="div-block-13"><img src="images/dots-1.png" loading="lazy" style="opacity:0" data-w-id="ba8f9d6d-6841-1bab-eb2f-a251e5df32ec" alt="" class="image-11">
+      <div class="div-block-14">
+        <h1 class="heading-8">From Nomu to TASI</h1>
+        <h1 class="heading-7">A JOURNEY OF BALANCED EXPANSION</h1>
+      </div>
+    </div><img class="image-12" src="images/6947d2993cc0359121c84a6d_3-2.png" alt="" style="opacity:0" sizes="100vw" data-w-id="8cc46f6d-e7a7-16cf-ceb9-c634627ae2ca" loading="lazy" srcset="images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-500.png 500w, images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-800.png 800w, images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-1080.png 1080w, images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-1600.png 1600w, images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-2000.png 2000w, images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-2600.png 2600w, images/f5fb7c64217c7f189424b6947d2993cc0359121c84a6d_3-257555e0e38_3-p-3200.png 3200w, images/6947d2993cc0359121c84a6d_3-2.png 5678w">
+    <div class="div-block-237"><img src="images/Group-5-1.png" loading="lazy" alt="" class="image-67"></div>
+  </section>
+  <section class="section-13">
+    <div class="div-block-94">
+      <div class="div-block-99">
+        <h1 letters-fade-in="" text-split="" class="heading-22">Theme of the Year</h1>
+        <div text-split="" letters-fade-in="" class="text-block-19">From Nomu to TASI</div>
+        <div text-split="" letters-fade-in="" class="text-block-18">A JOURNEY OF<br>BALANCED EXPANSION</div>
+        <p letters-fade-in="" text-split="" class="paragraph-4">GAS Arabian Services’ journey through 2025 was defined by disciplined execution and a measured step-up to the Saudi Exchange Main Market. Approval to transfer was granted on 16 September 2025, with trading commencing on 9 October 2025 under ticker 4146.<br>Amid rising activity across the Kingdom’s gas, power, and industrial sectors, we advanced our integrated model in Technical Services, Trading, and Manufacturing to convert opportunity into dependable outcomes. By pairing governance maturity with operating rigor, we strengthened backlog quality, deepened customer partnerships, and reinforced the capabilities that sustain reliable, lower-carbon, in-Kingdom growth.</p>
+        <a href="theme-of-the-year.html" class="link-block-3 w-inline-block">
+          <div class="div-block-95">
+            <div class="text-block-20">Read More</div><img src="images/Arrow-2.png" loading="lazy" alt="" class="image-35">
+          </div>
+        </a>
+      </div>
+      <div data-w-id="2b0661a8-425b-9f0c-3242-7e22e0ffb674" style="opacity:0" class="div-block-96"></div>
+    </div>
+    <div class="div-block-97"><img src="images/Frame-6.png" loading="lazy" style="opacity:0" data-w-id="81cbcf5b-fb36-5600-23e6-210f2155c728" alt="" class="image-36">
+      <div class="div-block-98">
+        <div data-w-id="5d7f6309-6c44-ec9e-6d1b-163a3cd171bd" style="opacity:0" class="text-block-21">NOMU<br>TASI</div>
+      </div>
+    </div>
+  </section>
+  <section class="section-6">
+    <div class="div-block-18">
+      <div class="div-block-35"></div>
+      <div class="div-block-19">
+        <div class="div-block-22">
+          <div class="div-block-23"></div>
+          <div class="div-block-24">
+            <div class="div-block-92">
+              <h1 class="heading-9">Our Story</h1>
+              <div class="div-block-93"></div>
+            </div>
+            <div letters-fade-in="" text-split="" class="text-block-3">Since 1992, GAS Arabian Services has evolved from a trading office in<br>Dammam into a comprehensive technical solutions provider for Saudi<br>Arabia’s most demanding sectors, offering integrated technical services,<br>industrial trading, and manufacturing.</div>
+          </div>
+          <div class="div-block-25">
+            <div data-w-id="bbf6e0bc-a2ac-35c3-da44-e833b0c1e330" style="opacity:0" class="div-block-26">
+              <div class="div-block-27"><img src="images/Group-1.png" loading="lazy" alt="" class="image-13">
+                <h1 class="heading-10">Our Mission</h1>
+                <div text-split="" letters-fade-in="" class="text-block-4">To conceive and deliver full spectrum,<br>customized solutions for our clients,<br>helping them thrive through<br>exceptional products, services and<br>specialized labor.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-block-336">
+        <div class="div-block-342">
+          <div class="div-block-337">
+            <div class="div-block-339"><img src="images/691ad76f9189e29e0bae0319_Vector.svg" loading="lazy" alt="" class="image-90"></div>
+            <div>
+              <h1 class="heading-65 _66">Our Vision</h1>
+            </div>
+            <div class="div-block-340">
+              <div class="text-block-71 _66">To drive industrial success in our region through superior dedication, dynamic partnerships and innovative thinking, enhancing our country’s capabilities on the world stage.</div>
+            </div>
+          </div>
+        </div>
+        <div class="div-block-337 _77">
+          <div class="div-block-339"><img src="images/691ad797211d77878209d630_Group-12.svg" loading="lazy" alt=""></div>
+          <div>
+            <h1 class="heading-65">Our Mission</h1>
+          </div>
+          <div class="div-block-341">
+            <div class="text-block-71">To conceive and deliver full-spectrum, customized solutions for our clients, helping them thrive through exceptional products, services and specialized labor.</div>
+          </div>
+        </div>
+      </div>
+      <div class="div-block-90">
+        <div data-w-id="e3c29173-47a8-e7aa-6b98-dcc2dbf48b86" style="opacity:0" class="div-block-28">
+          <div class="div-block-29"><img src="images/691ad76f9189e29e0bae0319_Vector.svg" loading="lazy" alt="" class="image-14">
+            <h1 class="heading-11">Our Vision</h1>
+            <div text-split="" letters-fade-in="" class="text-block-5">To drive industrial success in our region through superior dedication,dynamic partnerships and innovative thinking, enhancing our country’s capabilities on the world stage.</div>
+          </div>
+        </div>
+      </div>
+      <div class="div-block-30">
+        <div class="div-block-33">
+          <h1 class="heading-12">Our Values</h1>
+          <div class="div-block-31">
+            <div id="btn-1" class="div-block-32 _2 w-node-_1eabff5f-86b4-d6ef-918a-5a704968a72c-a703773c"><img src="images/691ad7c67b17b96531e263a9_Vector-1.svg" loading="lazy" alt="" class="image-15">
+              <h5 class="heading-14">Innovation</h5>
+              <div id="wrapper-1" class="div-block-159"><img src="images/Vector-3.svg" loading="lazy" alt="" class="image-53"></div>
+            </div>
+            <div id="btn-2" class="div-block-32 _2 w-node-_5cb52f42-43f0-d969-611e-f606eddcf0b7-a703773c"><img src="images/691ad7e3874706a3d60c3924_Vector-2.svg" loading="lazy" alt="" class="image-15">
+              <h5 class="heading-14">Reliability</h5>
+              <div id="wrapper-2" class="div-block-159"><img src="images/Vector-3.svg" loading="lazy" alt="" class="image-53"></div>
+            </div>
+            <div id="btn-3" class="div-block-32 _2 w-node-_87a3c6fb-c5f1-3c9e-3155-3e454ff0edf3-a703773c"><img src="images/691ad8181549cfc013d04514_Vector-3.svg" loading="lazy" alt="" class="image-15">
+              <h5 class="heading-14">Teamwork</h5>
+              <div id="wrapper-3" class="div-block-159"><img src="images/Vector-3.svg" loading="lazy" alt="" class="image-53"></div>
+            </div>
+            <div id="btn-4" class="div-block-32 _2 w-node-_2a6552c6-d4b6-4adb-8020-9f235762aba6-a703773c"><img src="images/691ad833db4f96b2af21144d_Vector-4.svg" loading="lazy" alt="" class="image-15">
+              <h5 class="heading-14">Passion</h5>
+              <div id="wrapper-4" class="div-block-159"><img src="images/Vector-3.svg" loading="lazy" alt="" class="image-53"></div>
+            </div>
+            <div id="btn-5" class="div-block-32 _2 w-node-e683f094-32d0-de6c-1317-275331007b9c-a703773c"><img src="images/Group-7.png" loading="lazy" alt="" class="image-15">
+              <h5 class="heading-14">Integrity</h5>
+              <div id="wrapper-5" class="div-block-159"><img src="images/Vector-3.svg" loading="lazy" alt="" class="image-53"></div>
+            </div>
+            <div id="btn-6" class="div-block-32 _2 _3 w-node-fb3e84ad-cc8f-e156-fa3f-a11f17729626-a703773c"><img src="images/691ad874ab523c664eb0a1fc_Vector-6.svg" loading="lazy" alt="" class="image-15">
+              <h5 class="heading-14">Respect</h5>
+              <div id="wrapper-6" class="div-block-159"><img src="images/Vector-3.svg" loading="lazy" alt="" class="image-53"></div>
+            </div>
+          </div>
+        </div>
+        <div id="content-inner" class="div-block-157">
+          <div id="info-text" text-split="" letters-fade-in="" class="text-block-41">we welcome new ideas and continuous improvement across engineering, supply and manufacturing.</div>
+        </div>
+      </div>
+    </div>
+    <div class="div-block-91"></div>
+  </section>
+  <section class="section-7">
+    <div class="div-block-36">
+      <h1 class="heading-15">Business Segments</h1>
+    </div>
+    <div class="div-block-38">
+      <div id="w-node-c94b29c9-59b7-0df8-97cf-a2184d4d81e0-a703773c" class="w-layout-layout quick-stack-4 wf-layout-layout">
+        <div id="w-node-c94b29c9-59b7-0df8-97cf-a2184d4d81e1-a703773c" class="w-layout-cell">
+          <div class="div-block-39">
+            <p class="paragraph">GAS executes end-to-end scopes through three operating segments: <strong>Technical Services, Trading and Manufacturing</strong> giving customers single-partner accountability from engineering and procurement to fabrication, commissioning and lifecycle maintenance.<br>Our three-segment model provides breadth of capability close to customer operations:</p><img src="images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-1.jpeg" loading="lazy" sizes="100vw" srcset="images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-1-p-500.jpeg 500w, images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-1-p-800.jpeg 800w, images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-1-p-1080.jpeg 1080w, images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-1.jpeg 1500w" alt="" class="image-16">
+          </div>
+        </div>
+        <div id="w-node-c94b29c9-59b7-0df8-97cf-a2184d4d81e2-a703773c" class="w-layout-cell cell-2">
+          <div id="gas-donut-outer" style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 60px 10px;">
+            <div id="gas-donut-inner" style="position:relative;width:100%;max-width:340px;aspect-ratio:1;">
+              <canvas id="gasDonutCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+              <span id="lbl-mfg" style="position:absolute;top:-10%;left:50%;transform:translateX(-50%);font-family:'Gretasanspro Bld','Greta Sans Pro',sans-serif;font-weight:700;font-size:clamp(16px,2vw,26px);color:#00A64F;white-space:nowrap;">2.8%</span>
+              <span id="lbl-ts"  style="position:absolute;top:50%;left:-25%;transform:translateY(-50%);font-family:'Gretasanspro Bld','Greta Sans Pro',sans-serif;font-weight:700;font-size:clamp(16px,2vw,26px);color:#0D94C8;white-space:nowrap;">33.3%</span>
+              <span id="lbl-tr"  style="position:absolute;top:50%;right:-25%;transform:translateY(-50%);font-family:'Gretasanspro Bld','Greta Sans Pro',sans-serif;font-weight:700;font-size:clamp(16px,2vw,26px);color:#143345;white-space:nowrap;">63.9%</span>
+            </div>
+            <div class="div-block-86" style="margin-top:16px;">
+              <div id="w-node-_9d04eee0-9923-7b86-e617-b0f221fe34a4-a703773c" class="div-block-87 _3">
+                <div class="div-block-88"></div>
+                <div class="text-block-15">Trading<br>&#8205;</div>
+              </div>
+              <div id="w-node-de37787b-de4d-7e48-2b0d-fc84581c1b98-a703773c" class="div-block-87 _3">
+                <div class="div-block-88 _2"></div>
+                <div class="text-block-15 _2">Technical<br> Services<br></div>
+              </div>
+              <div id="w-node-_7d6db1bd-77b7-f5da-f377-d29050dba369-a703773c" class="div-block-87 _3">
+                <div class="div-block-88 _3"></div>
+                <div class="text-block-15 _3">Manufacturing<br>&#8205;</div>
+              </div>
+            </div>
+            <div class="div-block-326">
+              <div class="text-block-66">Revenue Mix (Contribution to Total Revenue)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-9">
+    <div class="quick-stack-2 div-block-167">
+      <div id="card-1" class="div-block-166">
+        <div class="segment-card">
+          <div class="div-block-368"></div>
+          <div id="default-1" class="div-block-169"><img src="images/WhatsApp-Image-2026-03-07-at-4.03.22-PM.jpeg" loading="lazy" sizes="100vw" srcset="images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-p-500.jpeg 500w, images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-p-800.jpeg 800w, images/WhatsApp-Image-2026-03-07-at-4.03.22-PM-p-1080.jpeg 1080w, images/WhatsApp-Image-2026-03-07-at-4.03.22-PM.jpeg 1500w" alt="" class="image-20">
+            <h1 class="heading-21">Technical Services</h1>
+          </div>
+          <div id="hover-content-1" class="div-block-160">
+            <div class="div-block-293">
+              <h1 class="heading-61"><strong class="bold-text">Technical Services</strong></h1>
+              <div><img src="images/x-mark.png" loading="lazy" id="Image-77" alt="" class="image-77"></div>
+            </div>
+            <div class="text-block-16">Project Management / EPC, LSTK &amp; LSPB: GAS acts as an experienced contractor across EPC/LSTK/LSPB delivery, with 70+ projects executed for major industrial clients including Saudi Aramco, SABIC, Saudi Electricity Company, Ma’aden, Marafiq and others. Capabilities span pipelines (oil, gas, water) and pumping stations, in-plant piping construction, process and utility plants, gas compression plants, and full construction management. The division deploys PMP-qualified and Aramco-certified personnel, and is recognized for millions of injury-free hours with LTI rates consistently below industry averages.</div>
+            <div id="full-text-1" class="full-description text-block-16">Field Services &amp; Manpower: GAS supplies multi-disciplinary manpower (process, rotating equipment, reliability/RCM/RBI, QA/QC, planners and analyzer technicians) and executes shutdowns/turnarounds, plant retrofits and modifications, dismantling/relocation, electrical &amp; instrumentation LSTK works, and rotating-equipment overhauls (turbines, compressors, pumps and other critical assets).<br>Shutdown &amp; Plant Services: Static services include mechanical and rotary technicians, welders/fabricators, scaffolders, GRP and electrical specialists; rotating services cover alignment, overhauls, balancing, bolt torquing/tensioning and diving works, including overhauling of steam turbines, centrifugal/reciprocating compressors, expanders, blowers/fans and critical pumps.<br></div>
+            <div id="read-more-1" class="div-block-89">
+              <div class="text-block-17">Read More </div><img src="images/Arrow-2.png" loading="lazy" alt="" class="image-34">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="card-2" class="div-block-164">
+        <div class="segment-card">
+          <div class="div-block-368"></div>
+          <div id="default-2" class="div-block-168"><img src="images/Mask-group.png" loading="lazy" sizes="100vw" srcset="images/996ee35a13961460da86b7556f7edf32_Mask-group-p-500.png 500w, images/Mask-group.png 579w" alt="" class="image-20">
+            <h1 class="heading-21">Trading</h1>
+          </div>
+          <div id="hover-content-2" class="div-block-160">
+            <div class="div-block-293">
+              <h1 class="heading-61"><strong class="bold-text">Trading</strong></h1>
+              <div><img src="images/x-mark.png" loading="lazy" id="Image-77" alt="" class="image-77"></div>
+            </div>
+            <div class="text-block-16">Instrumentation &amp; Electrical: GAS delivers state-of-the-art solutions in pressure, flow, level, temperature; gas and liquid analyzers (including CEMS); wireless/IIoT and industrial connectivity, supported by specialist product principals such as Yokogawa, SKF, Weidmüller and WIKA. The portfolio addresses demanding process-control applications where reliability, connectivity and accuracy are critical.<br></div>
+            <div id="full-text-2" class="full-description text-block-16">Mechanical &amp; Chemical: Through a wide international partner network, GAS supplies rotating and static equipment across pumps, compressors, blowers, valves, heat exchangers and steam traps, along with solutions for decarbonization and carbon-capture applications. Representative principals include Elliott Group, Sundyne, FS-Elliott, Trillium Flow Technologies (Valves), Armstrong International, SPX FLOW, ELGi and Quaker Houghton. Customers receive 24/7 technical support to minimize downtime.<br></div>
+            <div id="read-more-2" class="div-block-89">
+              <div class="text-block-17">Read More </div><img src="images/Arrow-2.png" loading="lazy" alt="" class="image-34">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="card-3" class="div-block-165">
+        <div class="segment-card">
+          <div class="div-block-368"></div>
+          <div id="default-3" class="div-block-167"><img src="images/Trading.png" loading="lazy" sizes="100vw" srcset="images/7a714ed395165d1ddbcb84542db4dea1_Trading-p-500.png 500w, images/Trading.png 535w" alt="" class="image-20">
+            <h1 class="heading-21">Manufacturing</h1>
+          </div>
+          <div id="hover-content-3" class="div-block-160">
+            <div class="div-block-293">
+              <h1 class="heading-61"><strong class="bold-text">Manufacturing</strong></h1>
+              <div><img src="images/x-mark.png" loading="lazy" id="Image-77" alt="" class="image-77"></div>
+            </div>
+            <div class="text-block-16">GAS Metal Tech (GMT) is a business segment of GAS Arabian Services Company which provides specialized manufacturing and fabrication solutions to the Kingdom’s industrial sector. GMT operates two fully equipped fabrication facilities strategically located in the Eastern Province: a 30,000 sqm flagship facility in Dammam at King Abdulaziz Port, and a 12,000 sqm facility in Jubail, enhancing capacity and proximity to major industrial clients. </div>
+            <div id="full-text-3" class="full-description text-block-16">GMT delivers end-to-end capabilities including design, fabrication, assembly, testing, and inspection of modular skids, pressure vessels, piping spools, and structural steel for oil &amp; gas, petrochemical, power, and industrial projects. This segment serves leading clients such as Saudi Aramco, SABIC, Saudi Electricity Company, Schlumberger, and Sipchem, and operates in compliance with ISO and ASME standards, ensuring consistent quality, safety, and reliability.</div>
+            <div id="read-more-3" class="div-block-89">
+              <div class="text-block-17">Read More </div><img src="images/Arrow-2.png" loading="lazy" alt="" class="image-34">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-11">
+    <div class="w-layout-blockcontainer container-5 w-container">
+      <div class="div-block-66">
+        <h1 class="heading-19">Financial Highlights</h1>
+        <div class="text-block-8">2024</div>
+        <div class="text-block-8 _2">2025</div>
+      </div>
+      <div class="div-block-79">
+        <div class="div-block-67">
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">Revenue</div>
+              <div class="div-block-69"><img src="images/Vector-1.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10"><span data-target="31.8" class="counter-number">31.8</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div class="text-block-11"><span data-target="1093" class="counter-number">1093</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-294">
+                  <div data-w-id="a3966c36-bfcb-a4fd-43f2-2bfe1e335b49" class="div-block-74"></div>
+                </div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div class="text-block-11 _2"><span data-target="1440.3" class="counter-number">1,440.3</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="434df89d-b38a-98ed-0658-e347ff8b8f55" class="div-block-74 _2 div-block-298"></div>
+              </div>
+            </div>
+          </div>
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">EPS</div>
+              <div class="div-block-69"><img src="images/Vector-1.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10"><span data-target="32.3" class="counter-number">32.3</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71 _54"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div data-target="0.72" class="text-block-11 counter-number">0.72</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-298">
+                  <div data-w-id="1110f780-b551-f9bb-c16f-d74e8d4f0b26" class="div-block-74"></div>
+                </div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71 _54"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div data-target="0.96" class="text-block-11 _2 counter-number">0.96</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="1110f780-b551-f9bb-c16f-d74e8d4f0b2d" class="div-block-74 _2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">Gross Profit</div>
+              <div class="div-block-69"><img src="images/Vector-1.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10"><span data-target="31.2" class="counter-number">31.2</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div class="text-block-11"><span data-target="172.4" class="counter-number">172.4</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-295">
+                  <div data-w-id="c1a76f1f-9a40-84c4-dfe6-9848b9428275" class="div-block-74"></div>
+                </div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div class="text-block-11 _2"><span data-target="226.2" class="counter-number">226.2</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="c1a76f1f-9a40-84c4-dfe6-9848b942827c" class="div-block-74 _2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">Cash Flow</div>
+              <div class="div-block-69"><img src="images/v3.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10 red"><span data-target="58.0" class="counter-number">58.0</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71 _54"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div class="text-block-11"><span data-target="193.1" class="counter-number">193.1</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="ef82c660-5ac2-a455-2311-36b5f4ce330b" class="div-block-74"></div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71 _54"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div class="text-block-11 _2"><span data-target="81.2" class="counter-number">81.2</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-299">
+                  <div data-w-id="ef82c660-5ac2-a455-2311-36b5f4ce3312" class="div-block-74 _2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-block-78"></div>
+        <div class="div-block-67">
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">Operating Profit (EBIT)</div>
+              <div class="div-block-69"><img src="images/Vector-1.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10"><span data-target="34.5" class="counter-number">34.5</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div class="text-block-11"><span data-target="110.7" class="counter-number">110.7</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-295">
+                  <div data-w-id="e2806ef5-c2fb-cd03-f190-ecfa3b1e1004" class="div-block-74"></div>
+                </div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div class="text-block-11 _2"><span data-target="149.0" class="counter-number">149.0</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="e2806ef5-c2fb-cd03-f190-ecfa3b1e100b" class="div-block-74 _2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">Capital Expenditure (Capex)</div>
+              <div class="div-block-69"><img src="images/v3.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10 red"><span data-target="5.8" class="counter-number">5.8</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71 _54"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div class="text-block-11"><span data-target="61.4" class="counter-number">61.4</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="ebe4713d-5d7f-0177-ecef-2534e047a116" class="div-block-74"></div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71 _54"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div class="text-block-11 _2"><span data-target="57.9" class="counter-number">57.9</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-300">
+                  <div data-w-id="ebe4713d-5d7f-0177-ecef-2534e047a11d" class="div-block-74 _2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-block-67">
+          <div class="div-block-70">
+            <div class="div-block-68">
+              <div class="text-block-9">Net Profit</div>
+              <div class="div-block-69"><img src="images/Vector-1.png" loading="lazy" alt="" class="image-27">
+                <div class="text-block-10"><span data-target="32.3" class="counter-number">32.3</span>%</div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-4.svg" loading="lazy" alt="" class="image-28">
+                <div class="text-block-11"><span data-target="113.9" class="counter-number">113.9</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div class="div-block-295">
+                  <div data-w-id="05eea593-c61d-a0cd-60a5-c793e2167ed2" class="div-block-74"></div>
+                </div>
+              </div>
+            </div>
+            <div class="div-block-72">
+              <div class="div-block-71"><img src="images/Vector-5.svg" loading="lazy" alt="" class="image-28 _2">
+                <div class="text-block-11 _2"><span data-target="150.8" class="counter-number">150.8</span>m</div>
+              </div>
+              <div class="div-block-73">
+                <div data-w-id="05eea593-c61d-a0cd-60a5-c793e2167ed9" class="div-block-74 _2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-12">
+    <div class="w-layout-blockcontainer container-6 w-container">
+      <div class="div-block-80"><img src="images/2.png" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/2-p-500.png 500w, images/2-p-800.png 800w, images/2-p-1080.png 1080w, images/2-p-1600.png 1600w, images/2-p-2000.png 2000w, images/2-p-2600.png 2600w, images/2-p-3200.png 3200w, images/2.png 5678w" alt="" class="image-29">
+        <div class="div-block-81"></div>
+        <div class="div-block-82">
+          <h1 class="heading-20">2025</h1>
+          <div class="text-block-12">Annual Report</div>
+        </div>
+        <div class="div-block-83">
+          <a href="#s1" class="w-inline-block"><img src="images/arrow-1.svg" loading="lazy" alt="" class="image-30"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6947c050c911bc4da703773d" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <style>
+  /* تأثير الهوفر */
+  .div-block-32 {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative; 
+  }
+  .div-block-32:hover {
+    background-color: #0D94C8 !important;
+  }
+  .div-block-32:hover .heading-14 {
+    color: #FFFFFF !important;
+  }
+  /* إخفاء الـ Wrappers والنص في البداية */
+  [id^="wrapper-"], #content-inner {
+    display: none;
+  }
+  /* تعديل الفقرة لتتوسط الشاشة في الموبايل */
+  @media (max-width: 767px) {
+    #content-inner {
+      display: none; /* سيظهر عبر JS */
+      width: 90vw; /* عرض الفقرة 90% من عرض الشاشة */
+      margin-left: auto !important;
+      margin-right: auto !important;
+      left: 0;
+      right: 0;
+      position: relative;
+      /* إذا كان الأب Grid، نجعل الفقرة تمتد على كل الأعمدة */
+      grid-column: 1 / -1; 
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    /* تأكيد أن الحاوية النصية بالداخل تتوسط أيضاً */
+    #info-text {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+  <script>
+$(document).ready(function() {
+  const textContent = {
+    'btn-1': "we welcome new ideas and continuous improvement across engineering, supply and manufacturing.",
+    'btn-2': "we keep our promises, meeting the standards and timelines our clients expect.",
+    'btn-3': "a diverse workforce whose different skill sets give us collective strength.",
+    'btn-4': "we love what we do; this fuels our total commitment in the field and at the factory.",
+    'btn-5': "we uphold the highest ethical standards and take responsibility for our actions.",
+    'btn-6': "we value coworkers, clients and partners, knowing when to listen, give credit, and offer constructive feedback."
+  };
+  $('.div-block-32').on('click', function() {
+    let btnId = $(this).attr('id'); 
+    let number = parseInt(btnId.split('-')[1]);
+    let windowWidth = $(window).width();
+    // إخفاء العناصر أولاً
+    $('[id^="wrapper-"]').hide();
+    $('#content-inner').hide();
+    if (textContent[btnId]) {
+      $('#info-text').text(textContent[btnId]);
+    }
+    if (windowWidth <= 767) {
+      // إظهار الـ Wrapper (السهم) الخاص بالكارد
+      $(`#wrapper-${number}`).fadeIn(200).css('display', 'block');
+      // تحديد نهاية الصف (1-2) (3-4) (5-6)
+      let rowEndId;
+      if (number <= 2) rowEndId = '#btn-2';
+      else if (number <= 4) rowEndId = '#btn-4';
+      else rowEndId = '#btn-6';
+      // نقل وإظهار الصندوق الأزرق
+      $(rowEndId).after($('#content-inner'));
+      // استخدام flex لضمان التوسط الداخلي و block للظهور
+      $('#content-inner').fadeIn(300).css({
+        'display': 'flex',
+        'margin-left': 'auto',
+        'margin-right': 'auto'
+      });
+    } else {
+      // منطق الديسك توب
+      $(`#wrapper-${number}`).fadeIn(300).css('display', 'flex');
+      $('#content-inner').fadeIn(300).css('display', 'flex');
+    }
+  });
+});
+</script>
+  <style>
+  /* إجبار الخط على Greta Sans Pro Bold */
+  [id^="card-"], 
+  [id^="read-more-"], 
+  [id^="full-text-"] {
+    font-family: "Greta Sans Pro", sans-serif !important;
+    font-weight: 700 !important;
+  }
+  /* إخفاء صورة الإكس في الحالة الطبيعية */
+  #Image-77 {
+    display: none;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+  }
+  .hide-now {
+    display: none !important;
+  }
+  .quick-stack-2 {
+    display: flex !important;
+    width: 100% !important;
+  }
+  [id^="card-"] {
+    flex: 1 !important;
+    transition: all 0.5s ease;
+    position: relative !important;
+    overflow: hidden;
+  }
+  [id^="hover-content-"] {
+    display: none;
+    flex-direction: column !important;
+  }
+</style>
+  <script>
+$(document).ready(function() {
+  // عند الضغط على Read More
+  $('[id^="read-more-"]').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var $currentCard = $(this).closest('[id^="card-"]');
+    var num = $currentCard.attr('id').split('-')[1];
+    var $otherCards = $currentCard.siblings('[id^="card-"]');
+    var $closeX = $currentCard.find('#Image-77'); // البحث عن صورة الإكس داخل الكارد
+    if (!$otherCards.hasClass('hide-now')) {
+      // إخفاء الكروت الأخرى
+      $otherCards.addClass('hide-now');
+      $(`#full-text-${num}`).fadeIn(400);
+      // إخفاء زر Read More وإظهار صورة الإكس (Image 77)
+      $(this).hide();
+      $closeX.fadeIn(300);
+    }
+  });
+  // عند الضغط على صورة الإكس (Image 77) للإغلاق
+  $(document).on('click', '#Image-77', function(e) {
+    var $currentCard = $(this).closest('[id^="card-"]');
+    var num = $currentCard.attr('id').split('-')[1];
+    var $otherCards = $currentCard.siblings('[id^="card-"]');
+    var $readMoreBtn = $currentCard.find('[id^="read-more-"]');
+    // إعادة الكروت الأخرى
+    $otherCards.removeClass('hide-now');
+    $(`#full-text-${num}`).hide();
+    // إخفاء الإكس وإعادة إظهار زر Read More بتنسيقه الأصلي
+    $(this).hide();
+    $readMoreBtn.show();
+  });
+  // منطق الهوفر
+  $('[id^="card-"]').hover(
+    function() {
+      if (!$('.hide-now').length) {
+        $(this).find('[id^="default-"]').hide();
+        $(this).find('[id^="hover-content-"]').css('display', 'flex');
+      }
+    },
+    function() {
+      if (!$('.hide-now').length) {
+        $(this).find('[id^="hover-content-"]').hide();
+        $(this).find('[id^="default-"]').fadeIn(200);
+      }
+    }
+  );
+});
+</script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.counter-number');
+  const options = { threshold: 0.6 };
+  const startCounter = (el) => {
+    const target = +el.getAttribute('data-target');
+    const duration = 2000; 
+    const fps = 60;
+    const totalFrames = Math.round((duration / 1000) * fps);
+    let frame = 0;
+    if (el.counterInterval) clearInterval(el.counterInterval);
+    el.counterInterval = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const current = Math.round(target * progress);
+      el.textContent = current.toLocaleString();
+      if (frame >= totalFrames) {
+        el.textContent = target.toLocaleString();
+        clearInterval(el.counterInterval);
+      }
+    }, duration / totalFrames);
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+      }
+    });
+  }, options);
+  counters.forEach(counter => observer.observe(counter));
+});
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Split text into spans
+  let typeSplit = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span"
+  });
+  // Link timelines to scroll position
+  function createScrollTrigger(triggerElement, timeline) {
+    // Reset tl when scroll out of view past bottom of screen
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top bottom",
+      onLeaveBack: () => {
+        timeline.progress(0);
+        timeline.pause();
+      }
+    });
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top 80%",
+      onEnter: () => timeline.play()
+    });
+  }
+  $("[words-slide-up]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[words-rotate-in]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.set($(this).find(".word"), { transformPerspective: 1000 });
+    tl.from($(this).find(".word"), { rotationX: -90, duration: 0.6, ease: "power2.out", stagger: { amount: 0.6 } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[words-slide-from-right]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".word"), { opacity: 0, x: "1em", duration: 0.6, ease: "power2.out", stagger: { amount: 0.2 } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[letters-slide-up]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[letters-slide-down]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[letters-fade-in]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[letters-fade-in-random]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".char"), { opacity: 0, duration: 0.05, ease: "power1.out", stagger: { amount: 0.4, from: "random" } });
+    createScrollTrigger($(this), tl);
+  });
+  $("[scrub-each-word]").each(function (index) {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: $(this),
+        start: "top 90%",
+        end: "top center",
+        scrub: true
+      }
+    });
+    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
+  });
+  // Avoid flash of unstyled content
+  gsap.set("[text-split]", { opacity: 1 });
+});
+</script>
+
+<script>
+// GAS Donut Chart - Standalone, works offline and online
+window.addEventListener('DOMContentLoaded', function() {
+  var canvas = document.getElementById('gasDonutCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var segs=[{c:'#143345',p:0.639},{c:'#0D94C8',p:0.333},{c:'#00A64F',p:0.028}];
+
+  var logo=new Image(), logoOk=false;
+  logo.onload=function(){logoOk=true; draw(1);};
+  logo.onerror=function(){draw(1);};
+  logo.src='images/logo-dark-1.png';
+
+  function getSize() {
+    var inner = document.getElementById('gas-donut-inner');
+    return inner ? Math.round(inner.getBoundingClientRect().width) : 280;
+  }
+
+  function draw(prog){
+    var dpr = window.devicePixelRatio || 1;
+    var S = getSize();
+    if(S < 10) S = 280;
+    // Set canvas resolution for sharp rendering
+    canvas.width  = S * dpr;
+    canvas.height = S * dpr;
+    canvas.style.width  = S + 'px';
+    canvas.style.height = S + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    var cx=S/2, cy=S/2, Ro=S*0.44, Ri=S*0.27;
+
+    ctx.clearRect(0,0,S,S);
+    var a=-Math.PI/2;
+    segs.forEach(function(s){
+      var sw=s.p*Math.PI*2*prog;
+      if(sw<=0)return;
+      ctx.beginPath();
+      ctx.arc(cx,cy,Ro,a,a+sw);
+      ctx.arc(cx,cy,Ri,a+sw,a,true);
+      ctx.closePath();
+      ctx.fillStyle=s.c;
+      ctx.fill();
+      a+=sw;
+    });
+    // white center
+    ctx.beginPath();ctx.arc(cx,cy,Ri-1,0,Math.PI*2);
+    ctx.fillStyle='#fff';ctx.fill();
+    // logo - stretched taller
+    var lw=S*0.52, lh=S*0.34;
+    if(logoOk){
+      ctx.save();
+      ctx.drawImage(logo, cx-lw/2, cy-lh/2-S*0.06, lw, lh);
+      ctx.restore();
+    } else {
+      ctx.fillStyle='#043344';
+      ctx.font='bold '+Math.round(S*0.14)+'px Arial';
+      ctx.textAlign='center';
+      ctx.fillText('GAS',cx,cy);
+    }
+    // Segments text - site font
+    ctx.fillStyle='#043344';
+    ctx.font='600 '+Math.round(S*0.06)+'px "Gretasanspro Med",Arial,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillText('Segments',cx,cy+Ri*0.50);
+  }
+
+  function animate(){
+    var t0=null,dur=1400;
+    (function step(ts){
+      if(!t0)t0=ts;
+      var p=Math.min((ts-t0)/dur,1),e=p<.5?2*p*p:-1+(4-2*p)*p;
+      draw(e);
+      if(p<1)requestAnimationFrame(step);
+    })(performance.now());
+  }
+
+  setTimeout(function(){ draw(1); }, 50);
+  window.addEventListener('resize', function(){ draw(1); });
+
+  var lastIn=false;
+  function check(){
+    var r=canvas.getBoundingClientRect();
+    var inView=r.top<window.innerHeight*0.9&&r.bottom>0;
+    if(inView&&!lastIn){lastIn=true; animate();}
+    if(!inView) lastIn=false;
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  setTimeout(check, 100);
+});
+</script>
+</body>
+</html>
