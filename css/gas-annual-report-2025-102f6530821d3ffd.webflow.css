@@ -2941,8 +2941,8 @@
 .div-block-117 {
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 400px;
+  width: clamp(300px, 35vw, 500px);
+  height: clamp(300px, 35vw, 500px);
   display: flex;
   position: relative;
 }
@@ -3200,7 +3200,13 @@
 
 .section-23 {
   background-color: #143345;
-  padding: 60px 0;
+  padding: 60px 57px 60px 80px;
+}
+
+@media screen and (max-width: 991px) {
+  .section-23 {
+    padding: 60px 1.6rem;
+  }
 }
 
 .heading-29 {
@@ -13266,4 +13272,130 @@
   .text-block-17 {
     font-size: clamp(14px, 1vw, 20px);
   }
+}
+
+/* ===== Merged Charts Section ===== */
+.gas-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 100%;
+}
+.gas-chart-card {
+  padding: 0;
+}
+
+/* Large screens 1440px+ - side by side */
+@media screen and (min-width: 1440px) {
+  .gas-charts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 2vw, 40px);
+    align-items: stretch;
+  }
+  .gas-chart-card {
+    background: #fff;
+    border: 1.5px solid #0D94C8;
+    border-radius: 16px;
+    padding: clamp(16px, 1.5vw, 28px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .gas-chart-card .div-block-112 {
+    flex: 1;
+    align-items: center;
+  }
+  /* Shrink elements inside to fit side by side */
+  .gas-chart-card .div-block-117 {
+    width: clamp(160px, 16vw, 260px);
+    height: clamp(160px, 16vw, 260px);
+  }
+  .gas-chart-card .div-block-114 {
+    width: 60px;
+    height: 14px;
+  }
+  .gas-chart-card .div-block-115 {
+    width: 60px;
+  }
+  .gas-chart-card .text-block-29 {
+    font-size: clamp(16px, 1.4vw, 22px);
+  }
+  .gas-chart-card .text-block-27 {
+    font-size: clamp(13px, 1vw, 16px);
+  }
+  .gas-chart-card .div-block-113 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .gas-chart-card .div-block-116 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .gas-chart-card .div-block-311 {
+    margin-left: 20px;
+  }
+  .gas-chart-card .div-block-170 {
+    padding-left: 20px;
+  }
+  .section-21 {
+    margin-top: 40px;
+  }
+}
+
+/* ===== Our Investment Case ===== */
+.inv-case-wrap {
+  width: 100%;
+}
+.inv-img-wrap {
+  position: relative;
+  width: calc(100% + 57px + 80px);
+  margin-left: -80px;
+  margin-right: -57px;
+  margin-top: 32px;
+}
+.inv-img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+.inv-pillars-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  padding: clamp(20px, 3vw, 50px) clamp(20px, 3vw, 50px) clamp(20px, 3vw, 50px) 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  background: linear-gradient(to right, rgba(20,51,69,0.88) 60%, transparent 100%);
+  box-sizing: border-box;
+}
+.inv-pillar-card {
+  font-family: Gretasanspro Reg, Georgia, sans-serif;
+  font-size: clamp(16px, 1.8vw, 28px);
+  line-height: 1.5;
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 991px) {
+  .inv-img-wrap {
+    width: calc(100% + 3.2rem);
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+  }
+  .inv-pillars-grid {
+    width: 100%;
+    padding-left: 1.6rem;
+    background: linear-gradient(to right, rgba(20,51,69,0.88) 70%, transparent 100%);
+  }
+}
+@media screen and (max-width: 767px) {
+  .inv-pillar-card { font-size: 13px; line-height: 1.4; }
+  .inv-pillars-grid { gap: 4px; }
 }
