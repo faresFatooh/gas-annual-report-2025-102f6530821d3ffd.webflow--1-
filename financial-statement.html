@@ -307,7 +307,12 @@
       <p letters-fade-in="" text-split="" class="paragraph-25 _25">2025 was also a milestone year in corporate evolution, with the Company’s successful transition to the <strong>Saudi Exchange Main Market (Tadawul)</strong> supporting stronger visibility, governance maturity, and broader investor access. Operationally, GAS continued to advance its role in national gas-network and energy-linked infrastructure, strengthened its backlog position, and deepened its aftermarket and localization platform through OEM/JV partnerships and selective strategic stakes.<br><br>Overall, 2025 performance reflects a larger, more capable platform with stronger earnings power and an expanding contribution from strategic investments, positioning GAS to pursue balanced growth, protect margins, and execute project cycles with continued working-capital discipline in 2026 and beyond. </p>
       <h3 class="heading-56"><strong class="bold-text-15">Revenue Composition (by Business Segment)</strong></h3>
       <div class="div-block-264">
-        <div data-w-id="02a2c96d-b7b6-6ca3-b312-93c2ebe3e2a5" data-is-ix2-target="1" class="lottie-animation-3" data-animation-type="lottie" data-src="documents/Artboard-1-2.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="5.06" data-loading="eager"></div>
+        <div class="fs-donut-wrap">
+          <span class="fs-lbl" style="top:-10%;left:50%;transform:translateX(-50%);color:#00A64F;">2.8%</span>
+          <span class="fs-lbl" style="top:50%;left:-18%;transform:translateY(-50%);color:#0D94C8;">33.3%</span>
+          <span class="fs-lbl" style="top:50%;right:-18%;transform:translateY(-50%);color:#143345;">63.9%</span>
+          <canvas id="fsDonut" style="width:100%;height:100%;display:block;"></canvas>
+        </div>
       </div>
       <div class="div-block-261">
         <div class="div-block-260">
@@ -336,10 +341,10 @@
   }
   .chart-wrapper {
     width: 100%;
-    max-width: 950px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin: 40px 0;
     font-family: var(--main-font);
-    padding: 20px;
+    padding: 0;
     direction: ltr;
     overflow: hidden;
   }
@@ -664,11 +669,11 @@
   }
   .chart-v-wrapper {
     width: 100%;
-    max-width: 950px;
-    margin: 60px auto;
+    max-width: 100%;
+    margin: 60px 0;
     font-family: var(--main-font);
     direction: ltr;
-    padding: 20px;
+    padding: 0;
   }
   /* Legend */
   .chart-legend {
@@ -1730,6 +1735,78 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
+});
+</script>
+<script>
+// Financial Statement Donut Chart
+window.addEventListener('DOMContentLoaded', function() {
+  var canvas = document.getElementById('fsDonut');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var segs = [
+    { c: '#143345', p: 0.639 },
+    { c: '#0D94C8', p: 0.333 },
+    { c: '#00A64F', p: 0.028 }
+  ];
+
+  function getSize() {
+    return Math.round(canvas.getBoundingClientRect().width) || 400;
+  }
+
+  function draw(prog) {
+    var dpr = window.devicePixelRatio || 1;
+    var S = getSize(); if (S < 10) S = 400;
+    canvas.width = S * dpr; canvas.height = S * dpr;
+    canvas.style.width = S + 'px'; canvas.style.height = S + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var cx = S/2, cy = S/2, Ro = S*0.44, Ri = S*0.27;
+    ctx.clearRect(0, 0, S, S);
+    var a = -Math.PI / 2;
+    segs.forEach(function(s) {
+      var sw = s.p * Math.PI * 2 * prog;
+      if (sw <= 0) return;
+      ctx.beginPath();
+      ctx.arc(cx, cy, Ro, a, a + sw);
+      ctx.arc(cx, cy, Ri, a + sw, a, true);
+      ctx.closePath();
+      ctx.fillStyle = s.c; ctx.fill();
+      a += sw;
+    });
+    // white center
+    ctx.beginPath(); ctx.arc(cx, cy, Ri - 1, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff'; ctx.fill();
+    // center text
+    ctx.fillStyle = '#143345';
+    ctx.textAlign = 'center';
+    ctx.font = '700 ' + Math.round(S*0.07) + 'px Arial';
+    ctx.fillText('FY2025', cx, cy - S*0.06);
+    ctx.font = '600 ' + Math.round(S*0.055) + 'px Arial';
+    ctx.fillText('Total', cx, cy + S*0.02);
+    ctx.fillText('Revenue', cx, cy + S*0.09);
+  }
+
+  function animate() {
+    var t0 = null, dur = 1400;
+    (function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1), e = p < .5 ? 2*p*p : -1+(4-2*p)*p;
+      draw(e);
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+
+  setTimeout(function() { draw(1); }, 80);
+  window.addEventListener('resize', function() { draw(1); });
+
+  var lastIn = false;
+  function check() {
+    var r = canvas.getBoundingClientRect();
+    var inView = r.top < window.innerHeight * 0.9 && r.bottom > 0;
+    if (inView && !lastIn) { lastIn = true; animate(); }
+    if (!inView) lastIn = false;
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  setTimeout(check, 150);
 });
 </script>
 </body>

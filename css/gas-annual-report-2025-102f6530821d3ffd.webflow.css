@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: Gretaarabicar;
   src: url('../fonts/GretaArabicAR-Regular.otf') format("opentype"), url('../fonts/GretaArabicAR-Regular.otf') format("opentype");
   font-weight: 400;
@@ -3936,6 +3936,13 @@
   position: relative;
 }
 
+@media screen and (max-width: 991px) {
+  .section-28 {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
+
 .div-block-154 {
   background-image: linear-gradient(0deg, #f8f8f8, #ffffff80);
   justify-content: center;
@@ -4265,7 +4272,20 @@
 }
 
 .div-block-174 {
-  z-index: -1;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+}
+.div-block-152 {
+  margin-bottom: 0;
+  padding: 60px 57px 60px 80px;
+  position: relative;
+  inset: auto;
+  z-index: 2;
+}
+.section-32 {
+  margin-top: -10px;
+  padding: 0;
   position: relative;
 }
 
@@ -4285,7 +4305,7 @@
 
 .section-32 {
   margin-top: -10px;
-  padding: 0 80px;
+  padding: 0;
 }
 
 .image-60 {
@@ -5816,6 +5836,19 @@
   margin-top: 50px;
   padding-bottom: 50px;
   display: flex;
+}
+.fs-donut-wrap {
+  position: relative;
+  width: clamp(280px, 50vw, 600px);
+  height: clamp(280px, 50vw, 600px);
+  margin: 50px auto;
+}
+.fs-lbl {
+  position: absolute;
+  font-family: 'Gretasanspro Bld', 'Greta Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 44px);
+  white-space: nowrap;
 }
 
 .div-block-265 {
@@ -8507,7 +8540,9 @@
   .image-58 {
     background-image: linear-gradient(#0000 67%, #0d94c8 73%);
     width: calc(100% - 160px);
-    margin: -80% auto 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
   }
 
   .image-59 {
@@ -13472,4 +13507,41 @@
 @media screen and (max-width: 767px) {
   .inv-pillar-card { font-size: 13px; line-height: 1.4; }
   .inv-pillars-grid { gap: 4px; }
+}
+
+/* ===== Theme of the Year - Fix left space ===== */
+.section-32 {
+  padding: 0 !important;
+}
+
+/* ===== Theme of the Year - Factory image full width ===== */
+.div-block-176 {
+  width: 100%;
+  line-height: 0;
+}
+.div-block-176 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* image-58 (TOTY factory) full width */
+.image-58 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+.div-block-152 {
+  margin-bottom: 0;
+  padding: 60px 57px 60px 80px;
+  position: relative;
+  inset: auto;
+  z-index: 3;
+}
+.section-32 .div-block-174 {
+  width: 100%;
+  overflow: visible;
 }
