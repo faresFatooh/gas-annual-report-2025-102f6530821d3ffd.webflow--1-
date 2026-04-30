@@ -13783,18 +13783,41 @@
   }
 }
 
-/* ===== Segment hover card mobile text ===== */
+/* ===== Segment hover card mobile text - Responsive Font Sizing ===== */
 @media screen and (max-width: 767px) {
   .div-block-160 .heading-61 {
-    font-size: 20px !important;
+    font-size: clamp(16px, 4vw, 22px) !important;
     line-height: 1.2 !important;
     margin-bottom: 4px !important;
+  }
+  .div-block-160 .text-block-16 {
+    font-size: clamp(13px, 2.8vw, 16px) !important;
+    line-height: 1.4 !important;
+  }
+  .div-block-160 .text-block-17 {
+    font-size: clamp(12px, 2.5vw, 16px) !important;
+  }
+  .div-block-160 .div-block-89 {
+    gap: clamp(6px, 1.5vw, 10px) !important;
   }
   .div-block-160 .div-block-293 {
     margin-bottom: 4px !important;
   }
   .div-block-160 {
     padding: 12px !important;
+  }
+}
+
+/* ===== Segment hover card small mobile (max-width: 479px) - Extra responsive ===== */
+@media screen and (max-width: 479px) {
+  .div-block-160 .heading-61 {
+    font-size: clamp(14px, 3.5vw, 18px) !important;
+  }
+  .div-block-160 .text-block-16 {
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+  }
+  .div-block-160 .text-block-17 {
+    font-size: clamp(11px, 2.2vw, 14px) !important;
   }
 }
 
