@@ -13472,6 +13472,51 @@
   }
 }
 
+/* ===== Desktop: Show legends with data ===== */
+@media screen and (min-width: 768px) {
+  /* Show the first chart's div-block-311 (Business mix - has the data) */
+  .gas-chart-card:first-child .div-block-311 {
+    display: block !important;
+  }
+  
+  /* Show the second chart's div-block-311 (Revenue Contribution - has first 3 regions) */
+  .gas-chart-card:nth-child(2) .div-block-311 {
+    display: block !important;
+  }
+  
+  /* Show the second chart's div-block-170 (Revenue Contribution - has Northern & Southern regions) */
+  .gas-chart-card:nth-child(2) .div-block-170 {
+    display: block !important;
+  }
+  
+  /* Hide mobile legends on desktop */
+  #mobile-legend-1,
+  #mobile-legend-2 {
+    display: none !important;
+  }
+}
+
+/* ===== Mobile: Show mobile legends, hide desktop legends ===== */
+@media screen and (max-width: 767px) {
+  .gas-chart-card .div-block-311 {
+    display: none !important;
+  }
+  
+  .gas-chart-card .div-block-170 {
+    display: none !important;
+  }
+  
+  #mobile-legend-1,
+  #mobile-legend-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-top: 25px !important;
+    width: 100% !important;
+  }
+}
+
 /* ===== Our Investment Case ===== */
 .inv-case-wrap {
   width: 100%;
@@ -13798,10 +13843,11 @@
   .div-block-160 .text-block-16 {
     font-size: clamp(13px, 2.8vw, 16px) !important;
     line-height: 1.1 !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 2px !important;
   }
   .div-block-160 .full-description {
     line-height: 1.1 !important;
+    margin-bottom: 2px !important;
   }
   .div-block-160 .text-block-17 {
     font-size: clamp(11px, 2.2vw, 14px) !important;
