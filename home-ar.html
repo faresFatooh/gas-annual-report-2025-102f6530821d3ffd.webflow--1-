@@ -21,6 +21,141 @@
     max-width: 100%;
     overflow-x: hidden !important;
     position: relative;
+    font-family: 'Gretaarabicar', sans-serif !important;
+  }
+  
+  * {
+    font-family: 'Gretaarabicar', sans-serif !important;
+  }
+  
+  /* تقليل عرض الفقرة في السكشن الثاني */
+  .paragraph-4 {
+    max-width: 50% !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
+  }
+  
+  /* جعل الفقرة 100% عرض على الموبايل */
+  @media (max-width: 767px) {
+    .paragraph-4 {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
+  
+  /* تقليل حجم خط مزيج الإيرادات */
+  .text-block-66 {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  
+  /* تغيير خط الفقرات في الكاردز إلى خط جريتا العربي */
+  .text-block-16 {
+    font-family: 'Gretaarabicar', sans-serif !important;
+  }
+  
+  /* تغيير خط الفقرات المخفية إلى خط جريتا العربي */
+  .full-description {
+    font-family: 'Gretaarabicar', sans-serif !important;
+  }
+  
+  .full-description.text-block-16 {
+    font-family: 'Gretaarabicar', sans-serif !important;
+  }
+  
+  .full-description.text-block-16.arr {
+    font-family: 'Gretaarabicar', sans-serif !important;
+  }
+  
+  /* تكبير حجم خط "من نمو إلى تاسي" */
+  .text-block-18 {
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+    min-height: auto !important;
+  }
+  
+  /* ترتيب عناصر الـ legend تحت الدائرة على الموبايل */
+  @media (max-width: 767px) {
+    .div-block-86 {
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 15px !important;
+    }
+    
+    .div-block-87 {
+      white-space: nowrap !important;
+    }
+    
+    .text-block-15 {
+      white-space: nowrap !important;
+      font-size: 12px !important;
+    }
+    
+    /* توسيع الكارد عند فتح اقرأ المزيد على الموبايل */
+    .segment-card {
+      height: auto !important;
+      min-height: auto !important;
+      overflow: visible !important;
+      position: relative !important;
+    }
+    
+    .div-block-160 {
+      height: auto !important;
+      min-height: auto !important;
+      overflow: visible !important;
+      position: relative !important;
+      width: 100% !important;
+      z-index: 10 !important;
+      padding: 20px !important;
+      box-sizing: border-box !important;
+      display: none !important;
+      flex-direction: column !important;
+    }
+    
+    .div-block-160[style*="display: flex"] {
+      display: flex !important;
+    }
+    
+    .segment-card[style*="height: auto"] {
+      min-height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+    
+    /* إصلاح مشكلة كارد التصنيع على الموبايل */
+    #card-3 .segment-card {
+      height: auto !important;
+      min-height: auto !important;
+      overflow: visible !important;
+    }
+    
+    #card-3 .div-block-160 {
+      height: auto !important;
+      min-height: auto !important;
+      overflow: visible !important;
+    }
+  }
+  
+  /* زيادة الارتفاع والـ line-height لجميع النصوص */
+  p, .text-block-3, .text-block-4, .text-block-5, .paragraph-4, .paragraph-6, .paragraph-7, .paragraph-8, .paragraph-9, .paragraph-10, .paragraph-12, .paragraph-13, .paragraph-14, .paragraph-15, .paragraph-16 {
+    line-height: 1.8 !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .heading-9, .heading-10, .heading-11, .heading-19, .heading-20, .heading-21, .heading-24, .heading-25, .heading-26, .heading-27, .heading-28, .heading-29, .heading-33, .heading-34, .heading-36, .heading-37, .heading-39, .heading-40, .heading-41, .heading-43, .heading-44, .heading-61 {
+    line-height: 1.4 !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+  
+  div, span, section, article {
+    overflow: visible !important;
   }
 
   /* ===== Large Screen / 4K Responsive ===== */
@@ -1075,8 +1210,15 @@ document.addEventListener("DOMContentLoaded", () => {
   textElements.forEach(el => {
     const fullText = el.textContent.trim();
     // 1. تثبيت المساحة: نأخذ الارتفاع والعرض الحالي للنص قبل تفريغه
-    el.style.minHeight = el.offsetHeight + "px";
-    el.style.minWidth = el.offsetWidth + "px";
+    const originalHeight = el.offsetHeight;
+    const originalWidth = el.offsetWidth;
+    el.style.minHeight = originalHeight + "px";
+    el.style.maxHeight = originalHeight + "px";
+    el.style.height = originalHeight + "px";
+    el.style.minWidth = originalWidth + "px";
+    el.style.maxWidth = originalWidth + "px";
+    el.style.width = originalWidth + "px";
+    el.style.overflow = "hidden";
     el.textContent = ""; 
     el.style.opacity = "1";
     gsap.to(el, {
@@ -1106,7 +1248,8 @@ document.addEventListener("DOMContentLoaded", () => {
   display: block; /* أو inline-block حسب تصميمك */
   white-space: pre-wrap; 
   word-wrap: break-word;
-  overflow: hidden; /* يمنع ظهور أي زيادة خلال الأنيميشن */
+  overflow: hidden !important; /* يمنع ظهور أي زيادة خلال الأنيميشن */
+  height: auto;
 }
 </style>
 <script>
@@ -1120,7 +1263,7 @@ window.addEventListener('DOMContentLoaded', function() {
   var logo=new Image(), logoOk=false;
   logo.onload=function(){logoOk=true; draw(1);};
   logo.onerror=function(){draw(1);};
-  logo.src='images/logo-dark-1.png';
+  logo.src='images/Group (5).svg';
 
   function getSize() {
     var inner = document.getElementById('gas-donut-inner');
@@ -1160,7 +1303,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var lw=S*0.52, lh=S*0.34;
     if(logoOk){
       ctx.save();
-      ctx.drawImage(logo, cx-lw/2, cy-lh/2-S*0.06, lw, lh);
+      ctx.drawImage(logo, cx-lw/2+15, cy-lh/2-S*0.06+10, lw, lh);
       ctx.restore();
     } else {
       ctx.fillStyle='#043344';
@@ -1170,9 +1313,9 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     // Segments text - site font
     ctx.fillStyle='#043344';
-    ctx.font='600 '+Math.round(S*0.06)+'px "Gretasanspro Med",Arial,sans-serif';
+    ctx.font='600 '+Math.round(S*0.06)+'px "Gretaarabicar",Arial,sans-serif';
     ctx.textAlign='center';
-    ctx.fillText('Segments',cx,cy+Ri*0.50);
+    ctx.fillText('القطاعات',cx,cy+Ri*0.50);
   }
 
   function animate(){
