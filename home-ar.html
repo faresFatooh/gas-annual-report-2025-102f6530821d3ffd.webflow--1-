@@ -70,6 +70,35 @@
   .full-description.text-block-16.arr {
     font-family: 'Gretaarabicar', sans-serif !important;
   }
+
+  /* تصغير نص البطاقات على الشاشات المتوسطة والصغيرة */
+  @media (max-width: 1280px) and (min-width: 992px) {
+    .text-block-16.arr,
+    .full-description.text-block-16.arr {
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+    }
+    .heading-61 {
+      font-size: 16px !important;
+    }
+    .div-block-160 {
+      padding: 14px !important;
+    }
+  }
+
+  @media (max-width: 1100px) and (min-width: 992px) {
+    .text-block-16.arr,
+    .full-description.text-block-16.arr {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+    .heading-61 {
+      font-size: 14px !important;
+    }
+    .div-block-160 {
+      padding: 10px !important;
+    }
+  }
   
   /* تكبير حجم خط "من نمو إلى تاسي" */
   .text-block-18 {
@@ -1150,6 +1179,49 @@ $(document).ready(function() {
   // عند الضغط على اقرأ المزيد
   $('[id^="read-more-"]').on('click', function(e) {
     e.preventDefault();
+    e.stopPropagation();
+
+    if (window.innerWidth <= 767) {
+      // موبايل: نفس منطق الإنجليزية
+      var btn  = this;
+      var card = $(btn).closest('.segment-card')[0];
+      var box  = $(btn).closest('.div-block-160')[0];
+      var fulls = box ? box.querySelectorAll('.full-description') : [];
+      if (!fulls.length || !card) return;
+
+      fulls.forEach(function(full){
+        full.style.display = 'block';
+        full.style.fontFamily = 'Gretaarabicar, sans-serif';
+      });
+      btn.style.display = 'none';
+
+      var imgs = card.querySelectorAll('.image-19,.image-20,.image-21');
+      var defaultDivs = card.querySelectorAll('.div-block-169, .div-block-168, .div-block-167');
+      imgs.forEach(function(img){ img.style.display = 'none'; });
+      defaultDivs.forEach(function(d){ d.style.display = 'none'; });
+
+      card.style.height = 'auto';
+      card.style.minHeight = 'auto';
+      card.style.maxHeight = 'none';
+      card.style.overflow = 'visible';
+
+      box.style.position = 'static';
+      box.style.height = 'auto';
+      box.style.minHeight = 'auto';
+      box.style.maxHeight = 'none';
+      box.style.overflow = 'visible';
+      box.style.top = 'auto';
+      box.style.left = 'auto';
+      box.style.right = 'auto';
+      box.style.bottom = 'auto';
+
+      setTimeout(function(){
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+      return;
+    }
+
+    // ديسكتوب
     var $currentCard = $(this).closest('[id^="card-"]');
     var num = $currentCard.attr('id').split('-')[1];
     var $otherCards = $currentCard.siblings('[id^="card-"]');
@@ -1161,8 +1233,43 @@ $(document).ready(function() {
       $closeX.fadeIn(300);
     }
   });
+
   // عند الضغط على X للإغلاق
   $(document).on('click', '#Image-77', function(e) {
+    if (window.innerWidth <= 767) {
+      // موبايل
+      var card = $(this).closest('.segment-card')[0];
+      var box  = $(this).closest('.div-block-160')[0];
+      if (!card || !box) return;
+
+      card.style.height = '';
+      card.style.minHeight = '500px';
+      card.style.maxHeight = '';
+      card.style.overflow = 'hidden';
+
+      box.style.position = 'absolute';
+      box.style.height = '100%';
+      box.style.minHeight = '';
+      box.style.maxHeight = '';
+      box.style.overflow = 'hidden';
+      box.style.top = '0';
+      box.style.left = '0';
+      box.style.right = '0';
+      box.style.bottom = '0';
+
+      var imgs = card.querySelectorAll('.image-19,.image-20,.image-21');
+      var defaultDivs = card.querySelectorAll('.div-block-169, .div-block-168, .div-block-167');
+      imgs.forEach(function(img){ img.style.display = ''; });
+      defaultDivs.forEach(function(d){ d.style.display = ''; });
+
+      var fulls = box.querySelectorAll('.full-description');
+      fulls.forEach(function(full){ full.style.display = 'none'; });
+      var readMore = box.querySelector('.div-block-89');
+      if (readMore) readMore.style.display = 'flex';
+      return;
+    }
+
+    // ديسكتوب
     var $currentCard = $(this).closest('[id^="card-"]');
     var num = $currentCard.attr('id').split('-')[1];
     var $otherCards = $currentCard.siblings('[id^="card-"]');
@@ -1172,21 +1279,35 @@ $(document).ready(function() {
     $(this).hide();
     $readMoreBtn.show();
   });
-  // تأثير الهوفر
+
+  // تأثير الهوفر - ديسكتوب فقط
   $('[id^="card-"]').hover(
     function() {
+      if (window.innerWidth <= 767) return;
       if (!$('.hide-now').length) {
         $(this).find('[id^="default-"]').hide();
         $(this).find('[id^="hover-content-"]').css('display', 'flex');
       }
     },
     function() {
+      if (window.innerWidth <= 767) return;
       if (!$('.hide-now').length) {
         $(this).find('[id^="hover-content-"]').hide();
         $(this).find('[id^="default-"]').fadeIn(200);
       }
     }
   );
+
+  // موبايل: فتح الهوفر عند الضغط على البطاقة
+  if (window.innerWidth <= 767) {
+    $('[id^="card-"]').on('click', function(e) {
+      if ($(e.target).closest('.div-block-160').length) return;
+      var $hoverContent = $(this).find('[id^="hover-content-"]');
+      var $defaultDiv   = $(this).find('[id^="default-"]');
+      $defaultDiv.hide();
+      $hoverContent.css('display', 'flex');
+    });
+  }
 });
 </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
