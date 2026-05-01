@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
+﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="69e3cfda65b3898382c9b932" data-wf-site="6947c050c911bc4da703773d">
 <head>
   <meta charset="utf-8">
@@ -96,14 +96,10 @@
     .header { padding: 8px 10px; height: var(--header-h); display: flex; align-items: center; }
     .header-left { gap: 8px; }
     .logo img { height: 38px; }
-    .mobile-v-line {
-      display: block; width: 1px; height: 22px; background: rgba(255, 255, 255, 0.35); margin-right: 2px;
-    }
-    .report-title { border: none; padding-right: 5px; height: auto; gap: 0; }
+    .mobile-v-line { display: block; width: 1px; height: 22px; background: rgba(255, 255, 255, 0.35); margin-left: 2px; }
+    .report-title { border: none; padding-left: 5px; height: auto; gap: 0; }
     .year-text { font-size: 16px; line-height: 1.1; }
-    .sub-text { 
-      display: block; font-size: 11px; margin-top: 0; white-space: nowrap; font-weight: 500;
-    }
+    .sub-text { display: block; font-size: 10px; margin-top: 0; white-space: nowrap; font-weight: 500; }
     .search-container { display: block; margin: 0 12px; flex: 2; }
     .search-input { font-size: 14px; padding: 2px 0; }
     .header-icons { gap: 10px; }
@@ -115,17 +111,59 @@
       display: flex; flex-direction: column; justify-content: space-between;
     }
     .navigation.open { max-height: 100dvh; opacity: 1; }
-    .nav-list { 
-      flex-direction: column; padding: 100px 20px 20px; align-items: center; gap: 0; 
-      overflow-y: auto; flex: 1;
-    }
+    .nav-list { flex-direction: column; padding: 100px 20px 20px; align-items: center; gap: 0; overflow-y: auto; flex: 1; }
     .nav-list li { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .nav-link { color: #FFFFFF; display: block; font-size: 18px; padding: 18px; }
+    .nav-link { color: #FFFFFF; display: block; font-size: 16px; padding: 18px; white-space: normal; }
     .mobile-menu-footer {
-      display: flex; justify-content: center; gap: 50px; padding: 25px;
-      background: rgba(0,0,0,0.1); border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      gap: 60px; 
+      padding: 25px;
+      background: rgba(0,0,0,0.1); 
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    .mobile-menu-footer .icon-btn { display: flex !important; }
+    .mobile-menu-footer .icon-btn { 
+        display: flex !important; 
+        justify-content: center; 
+        align-items: center;
+    }
+    
+    /* تعديل CEO's Message على الموبايل */
+    .section-25 {
+      background: white !important;
+    }
+    
+    .section-25 .div-block-179 {
+      flex-direction: column !important;
+    }
+    
+    .section-25 .div-block-179 {
+      background: white !important;
+    }
+    
+    .section-25 .heading-33 {
+      color: #0D94C8 !important;
+      font-size: 32px !important;
+    }
+    
+    .section-25 .heading-33._3 .text-span-12 {
+      font-size: 20px !important;
+      line-height: 1.6 !important;
+    }
+    
+    .section-25 .div-block-142 {
+      background: white !important;
+    }
+    
+    .section-25 .image-48 {
+      filter: none !important;
+    }
+  }
+  
+  /* زيادة حجم عنوان رسالة الرئيس التنفيذي */
+  .section-25 .div-block-308 .heading-33 {
+    font-size: 50px;
   }
 </style>
       <header class="header">
@@ -152,9 +190,7 @@
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
               </svg>
             </a>
-            <span class="icon-btn" style="cursor: default;" title="English">
-              <span class="lang-text">EN</span>
-            </span>
+            <a href="chief-executive-officers-message.html" class="icon-btn" title="English"><span class="lang-text">EN</span></a>
             <button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button>
           </div>
         </div>
@@ -162,10 +198,10 @@
       <nav class="navigation" id="navBar">
         <ul class="nav-list">
           <li>
-            <a href="https://gas-annual-report-2025-102f6530821d3ffd.webflow.io/home-ar" class="nav-link">الرئيسية</a>
+            <a href="home-ar.html" class="nav-link">الرئيسية</a>
           </li>
           <li>
-            <a href="https://gas-annual-report-2025-102f6530821d3ffd.webflow.io/overview-ar" class="nav-link">نظـرة عـامـة</a>
+            <a href="overview-ar.html" class="nav-link">نظـرة عـامـة</a>
           </li>
           <li>
             <a href="theme-of-the-year-ar.html" class="nav-link">شـعــار الـعــام</a>
@@ -177,14 +213,14 @@
             <a href="chief-executive-officers-message-ar.html" class="nav-link active">رسالة الرئيس التنفيذي</a>
           </li>
           <li>
-            <a href="directors-report-ar.html" class="nav-link">مجلس الإدارة</a>
+            <a href="directors-report-ar.html" class="nav-link">الحوكمة</a>
           </li>
           <li>
             <a href="financial-statement-ar.html" class="nav-link">المراجعة المالية</a>
           </li>
         </ul>
         <div class="mobile-menu-footer">
-          <span class="icon-btn" style="cursor: default;"><span class="lang-text" style="font-size: 20px;">EN</span></span>
+          <a href="chief-executive-officers-message.html" class="icon-btn"><span class="lang-text" style="font-size: 20px;">EN</span></a>
           <a href="https://www.saudiexchange.sa/Resources/fsPdf/8047_0_2026-03-31_15-01-08_En.pdf" class="icon-btn">
             <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px;">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
@@ -274,19 +310,21 @@
   <section class="section-26">
     <div class="div-block-141"></div>
     <div class="div-block-141 line2"></div>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">كان عام 2025 عامًا اتسم بالتنفيذ والتركيز والتقدم المدروس لشركة جاز العربية للخدمات. وبناءً على<br>الأسس الاستراتيجية التي أرساها مجلس الإدارة، ركزت الإدارة التنفيذية على تحويل الفرص إلى أداء ملموس، وتعزيز <br>منصتنا التشغيلية، وتحسين جودة التنفيذ، وتوسيع الأعمال في ظل استمرار نمو الطلب عبر قطاعات الغاز والطاقة <br>والصناعة في مختلف أنحاء المملكة.<br>وكانت أولويتنا على امتداد العام واضحة: التنفيذ المتقن، والتخصيص الرشيد لرأس المال، وبناء القدرات التي تدعم <br>النمو لما بعد الدورة الحالية.<br>‍</p>
-    <h1 class="heading-34 b ar"><strong>الاستراتيجية قيد التنفيذ</strong></h1>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">ترتكز استراتيجية جاز على تقديم حلول متكاملة داخل المملكة عبر كامل دورة حياة الأصول. وفي عام 2025، دفعنا هذه الاستراتيجية قدمًا من خلال رفع مستوى التنفيذ عبر ركائزنا التشغيلية الثلاث:<br><br>الخدمات الفنية، حيث تواصل أعمال الهندسة والتوريد والإنشاء وعقود تسليم المفتاح والخدمات الميدانية دعم نمو حجم الأعمال المتعاقد عليها وتعزيز ارتباط العملاء على المدى الطويل.<br><br>التجارة، التي تعمّق حضورنا في خدمات ما بعد البيع وتعزز مصادر الإيرادات المتكررة؛ و<br>التصنيع، الذي يتيح تعزيز التوطين، وتسريع أوقات الاستجابة، وإحكام الرقابة على الجودة والتسليم.<br>التزمت الإدارة بانضباطٍ صارم في اختيار المشاريع، مع إعطاء الأولوية للعقود التي تستطيع جاز من خلالها توظيف عمقها الفني وقدراتها المحلية وضوابطها التشغيلية لتقديم نتائج قابلة للتنبؤ.</p>
-    <h1 class="heading-34 b ar"><strong>تميّز التنفيذ على نطاق واسع</strong></h1>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">ومع ارتفاع مستويات النشاط، أصبحت المحافظة على جودة التنفيذ أكثر أهمية. وفي عام 2025، ركزنا على توحيد ضوابط إدارة المشاريع، وتعزيز الانضباط في التكاليف والجداول الزمنية، وتحسين التنسيق بين فرق المواقع وورش العمل وشركاء سلسلة الإمداد.<br>إن التميز التشغيلي في جاز ليس شعارًا؛ بل هو منظومة عمل. إذ تدعم القيادة القوية في مجالات الصحة والسلامة والبيئة، وتنامي الاهتمام بالأمن السيبراني وسلامة البيانات، تحقيقَ تنفيذ متسق عبر المناطق الجغرافية وأنواع المشاريع المختلفة.</p>
-    <h1 class="heading-34 b ar"><strong>تعميق القيمة المقدمة للعملاء</strong></h1>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">ومن السمات الفارقة لعام 2025 استمرار تطور علاقاتنا مع العملاء — من تسليمات ذات طبيعة تعاقدية قصيرة الأجل إلى شراكات أطول أمدًا. إذ بات العملاء يتعاملون مع جاز ليس لتنفيذ المشاريع فحسب، بل أيضًا لدعم موثوقية الأصول، وصيانتها عبر دورة حياتها، وتحقيق مستهدفات التوطين.<br>وتسهم قدراتنا المتنامية في خدمات ما بعد البيع، بما في ذلك أعمال الإحكام، والاختبارات، والمعايرة، وخدمات الدعم، في تعزيز جاهزية أصول العملاء وتقليل فترات التوقف، وفي الوقت ذاته خلق مصادر إيرادات أكثر متانة وتكرارًا لشركة جاز. ويعزز هذا التحول جودة أرباحنا ويكرّس دورنا بوصفنا شريكًا مسؤولًا وطويل الأجل.</p>
-    <h1 class="heading-34 b ar"><strong>بناء الشركة للمستقبل</strong></h1>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">يفرض النمو متطلبات لا تتعلق بالأنظمة والأصول فحسب، بل بالكوادر البشرية أيضًا. وخلال العام، استثمرنا بشكل مدروس في رفع قدرات القوى العاملة، وتعميق الخبرات القيادية، وتنمية المواهب الوطنية. وتواصل مسارات التدريب، وبرامج التطوير المنظمة، ونقل المعرفة عبر المشاريع المشتركة بناء المهارات التي ستحدد تنافسية جاز خلال الأعوام القادمة.<br>وبالقدر نفسه من الأهمية، حافظنا على تركيز قوي على ثقافة السلامة، وأخلاقيات العمل، والامتثال. ومع توسع الشركة، تُعد هذه العناصر ضرورية لحماية موظفينا وسمعتنا وقدرتنا على مزاولة الأعمال.</p>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">كان 2025 عاماً اتسم بالتنفيذ والتركيز والتقدم المدروس لدى جاز العربية للخدمات. واستناداً إلى الأسس الاستراتيجية التي أرساها مجلس الإدارة، ركزت الإدارة على تحويل الفرص إلى أداء ملموس، وتعزيز منصتنا التشغيلية، وتحسين جودة التنفيذ، وتوسيع أعمال الشركة بصورة مسؤولة، بالتزامن مع استمرار نمو الطلب في قطاعات الغاز والطاقة والصناعة في مختلف أنحاء المملكة. وكانت أولويتنا طوال العام واضحة: تنفيذ الأعمال بإتقان، وتخصيص رأس المال بحصافة، وبناء قدرات تضمن استدامة النمو لما بعد دورة الأعمال الراهنة.</p>
+    <h1 class="heading-34 b ar"><strong>الاستراتيجية قيد التطبيق</strong></h1>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">ترتكز استراتيجية جاز على تقديم حلول متكاملة داخل المملكة عبر دورة عمل الأصول بالكامل. وخلال عام 2025، عززنا هذه الاستراتيجية عبر رفع مستوى التنفيذ عبر ركائزنا التشغيلية الثلاث:<br><br>الخدمات الفنية: حيث تواصل أعمال الهندسة والمشتريات والإنشاء والتسليم المفتاح بمبلغ مقطوع والخدمات الميدانية دعم نمو رصيد الأعمال قيد التنفيذ وتعزيز ارتباط العملاء على المدى الطويل.<br><br>التجارة: التي تعمق حضورنا في خدمات ما بعد البيع، وتقوي مصادر الإيرادات المتكررة.<br><br>التصنيع: الذي يُمكّن التوطين، ويعزز سرعة الاستجابة، ويرفع مستوى التحكم في الجودة والتسليم.<br><br>وظلت شركتنا منضبطة في اختيار المشاريع، مع إعطاء الأولوية للعقود التي تُمكّن جاز من توظيف عمقها الفني وقدراتها المحلية وضوابطها التشغيلية لتقديم نتائج يمكن التعويل عليها.</p>
+    <h1 class="heading-34 b ar"><strong>التميز في التنفيذ على نطاق واسع</strong></h1>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">مع ارتفاع مستويات النشاط، أصبحت المحافظة على جودة التنفيذ أكثر أهمية. وفي عام 2025، ركزنا على توحيد ضوابط إدارة المشاريع، وتعزيز الانضباط في التكلفة والجدول الزمني، وتحسين التنسيق بين فرق المواقع والورش وشركاء سلسلة الإمداد. ومكننا نموذجنا التشغيلي المدمج، الذي يجمع بين التنفيذ في المواقع وورش الخدمات سريعة الاستجابة والدعم الهندسي المركزي، من إدارة التعقيد مع الحفاظ على الاعتمادية. وتبرز أهمية هذا النهج بوجه خاص في بنية الغاز وخطوط الأنابيب المرتبطة بالطاقة والمنشآت الصناعية، حيث يكون للتوقعات أو حوادث السلامة أثر جوهري. إن التميز التشغيلي في جاز ليس شعاراً، بل هو منظومة عمل. فالأطر الإدارية المعتمدة، وقيادة الصحة والسلامة والبيئة، وتنامي الاهتمام بالأمن السيبراني وسلامة البيانات، جميعها تدعم تسليماً متسقاً عبر المناطق وأنواع المشاريع.</p>
+    <h1 class="heading-34 b ar"><strong>تعميق القيمة للعملاء</strong></h1>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">كان أحد الملامح البارزة لعام 2025 هو تطور علاقاتنا مع العملاء من تعاملات تنفيذية قصيرة إلى شراكات أطول أمداً. فبات العملاء يتعاملون مع جاز ليس فقط لتنفيذ المشاريع، بل أيضاً لدعم اعتمادية الأصول وصيانة دورة الحياة وتحقيق أهداف التوطين. كما أن توسيع قدراتنا في خدمات ما بعد البيع، ومنها حلول الإحكام والاختبارات والمعايرة ودعم الخدمات، يعزز جاهزية أصول العملاء واستمرارية تشغيلها، وفي الوقت نفسه يخلق مصادر إيراد أكثر متانة وتكراراً لشركة جاز. ويقوي هذا التحول جودة أرباحنا ويعزز دورنا كشريك مسؤول ومعتمد على المدى الطويل.</p>
+    <h1 class="heading-34 b ar"><strong>بناء المؤسسة للمستقبل</strong></h1>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">لا يفرض النمو متطلبات على الأنظمة والأصول فحسب، بل على الناس أيضاً. وخلال العام، استثمرنا بصورة مدروسة في رفع كفاءة القوى العاملة وتعميق القدرات القيادية وتنمية المواهب الوطنية. وتواصل مسارات التدريب وبرامج التطوير المهيكلة ونقل المعرفة عبر المشروعات المشتركة بناء مهارات ستحدد تنافسية جاز خلال العقد القادم.<br>وبالقدر نفسه من الأهمية، حافظنا على تركيز قوي على ثقافة السلامة والأخلاقيات والالتزام. ومع توسع حجم المؤسسة، تصبح هذه العناصر ضرورية لحماية كوادرنا وسمعتنا ورخصة عملنا.</p>
     <h1 class="heading-34 b ar"><strong>الانضباط الرأسمالي وخلق القيمة</strong></h1>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">من منظور الإدارة التنفيذية، يظل الانضباط في إدارة رأس المال أمرًا غير قابل للتفاوض. وفي عام 2025، وازنّا بين الاستثمار في النمو وتوليد التدفقات النقدية وتعزيز متانة المركز المالي، بما يضمن احتفاظ الشركة بالمرونة اللازمة مع دعم عوائد المساهمين.<br>وتم تقييم كل قرار رأسمالي — سواء تعلق بتوسعة القدرات، أو الشراكات، أو رأس المال العامل — بناءً على مدى مساهمته في تحقيق عوائد مستدامة وخلق قيمة مدروسة المخاطر. وسيظل هذا الانضباط محورًا رئيسيًا<br>مع مواصلة جاز نموها بصفتها شركة مدرجة في<br>السوق الرئيسية.</p>
-    <h1 class="heading-34 b ar"><strong>توسيع المحفظة الاستراتيجية عبر استحواذات مستهدفة</strong></h1>
-    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">وفي عام 2025، اتخذنا كذلك خطوات مدروسة لتعزيز منصتنا عبر نمو مستهدف، يتسق مع استراتيجيتنا الرامية إلى إطالة العمر الافتراضي للأصول، وتعميق التوطين، وزيادة حصة الإيرادات المتكررة من خدمات ما بعد البيع. وخلال العام، استحوذت الشركة على حصص ملكية تبلغ 12.90% في شركة ايجل بورغمان العربية السعودية المحدودة، و40% في شركة تي سي آر العربية المحدودة. وتهدف عملية شراء هذه الحصص إلى تعزيز وزيادة فرص الاستثمار المتكاملة مع الخدمات التي تقدمها الشركة، وتتماشى عملية الشراء مع استراتيجية النمو الخاصة بالشركة، والتي تهدف إلى توسيع نطاق أعمالها، وتنويع مصادر دخلها، وتعزيز مكانتها في السوق السعودي، وتقوي قدرتنا على دعم العملاء لما بعد التنفيذ الأولي للمشاريع من خلال أعمال الصيانة والتحديثات ودعم الأعمار الافتراضية للأصول.<br>وبالنظر إلى المرحلة المقبلة، نؤكد ثقتنا في قوة منصتنا ومتانة الأسواق التي نخدمها. ومع استراتيجية واضحة، وتخصيص منضبط لرأس المال، والتزام راسخ بالسلامة والنزاهة والتميّز في التنفيذ، ستواصل جاز التوسع بمسؤولية وبناء قيمة طويلة الأجل للمساهمين وجميع أصحاب المصلحة.</p>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">ومن منظور الإدارة، يبقى الانضباط في تخصيص رأس المال أمراً غير قابل للمساومة. وفي عام 2025، وازنا بين الاستثمارات الداعمة للنمو وبين توليد النقد ومتانة الميزانية، بما يضمن احتفاظ الشركة بالمرونة اللازمة لدعم عوائد المساهمين. وقد خضع كل قرار رأسمالي، سواء تعلق بتوسعة الطاقة التشغيلية أو الشراكات أو رأس المال العامل، لتقييم يركز على مساهمته في عوائد مستدامة وخلق قيمة معدلة بالمخاطر. وسيظل هذا الانضباط محوراً أساسياً مع استمرار نمو جاز بوصفها شركة مدرجة في السوق الرئيسية.</p>
+    <h1 class="heading-34 b ar"><strong>توسيع المحفظة الاستراتيجية عبر استحواذات انتقائية</strong></h1>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">كما اتخذنا خلال عام 2025 خطوات مدروسة لتعزيز منصتنا عبر نمو غير عضوي موجه، بتوافق مع استراتيجيتنا في توسيع خدمات دورة الحياة وتعميق التوطين وزيادة حصة الإيرادات المتكررة من خدمات ما بعد البيع. وخلال العام، وقعت جاز اتفاقيات ملزمة واستحوذت على حصة ملكية بنسبة 12.90% في شركة إيجل بورغمان العربية السعودية المحدودة، وعلى حصة ملكية بنسبة 40% في شركة تي سي آر العربية المحدودة. وتُعد هذه الاستحواذات مكملة استراتيجياً؛ إذ توسع مشاركتنا في حلول الاعتمادية والإحكام ذات القيمة العالية، وتعزز عمقنا الفني في الخدمات المتخصصة، وتقوي قدرتنا على دعم العملاء لما بعد تنفيذ المشروع الأولي عبر الصيانة والترقيات ودعم دورة الحياة.</p>
+    <h1 class="heading-34 b ar"><strong>نظرة مستقبلية</strong></h1>
+    <p words-slide-from-right="" text-split="" class="paragraph-13 ar">نتطلع إلى المستقبل بثقة في قوة منصتنا ومتانة الأسواق التي نخدمها. ومع استراتيجية واضحة، وتخصيص رأسمالي منضبط، والتزام راسخ بالسلامة والنزاهة والتميز في التنفيذ، ستواصل «جاز العربية للخدمات» التوسع بصورة مسؤولة وبناء قيمة طويلة الأجل للمساهمين وكافة أصحاب المصلحة.</p>
   </section>
   <section class="section-12">
     <div class="w-layout-blockcontainer container-6 w-container">
@@ -331,7 +369,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) startCounter(entry.target);
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+      }
     });
   }, options);
   counters.forEach(counter => observer.observe(counter));
@@ -339,19 +379,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const textElements = document.querySelectorAll('[text-split]');
   textElements.forEach(el => {
     const fullText = el.textContent.trim();
-    // 1. تثبيت المساحة: نأخذ الارتفاع والعرض الحالي للنص قبل تفريغه
-    el.style.minHeight = el.offsetHeight + "px";
-    el.style.minWidth = el.offsetWidth + "px";
-    el.textContent = ""; 
+
+    // تثبيت الأبعاد على العنصر نفسه وعلى الأب
+    el.style.display = "block";
+    el.style.overflow = "hidden";
+    el.style.whiteSpace = "pre-wrap";
+    el.style.wordWrap = "break-word";
+
+    const elHeight = el.offsetHeight;
+    const elWidth  = el.offsetWidth;
+
+    // تثبيت الأب حتى لا يتمدد السكشن
+    const parent = el.parentElement;
+    if (parent) {
+      parent.style.minHeight = parent.offsetHeight + "px";
+      parent.style.overflow  = "hidden";
+    }
+
+    el.style.minHeight = elHeight + "px";
+    el.style.minWidth  = elWidth  + "px";
+    el.textContent = "";
     el.style.opacity = "1";
+
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
         end: "bottom 20%",
-        // restart: يعيد الأنيميشن عند الدخول
-        // reset: يصفر النص عند الخروج للأعلى (عشان يرجع ينكتب لما تنزل)
-        toggleActions: "restart reset restart reset", 
+        toggleActions: "restart reset restart reset",
       },
       duration: 1.5,
       ease: "none",
@@ -368,9 +423,17 @@ document.addEventListener("DOMContentLoaded", () => {
 /* إعدادات ضرورية لضمان عدم التمدد وسلاسة الظهور */
 [text-split] {
   opacity: 0;
-  display: block; /* أو inline-block حسب تصميمك */
+  display: block;
   white-space: pre-wrap; 
   word-wrap: break-word;
-  overflow: hidden; /* يمنع ظهور أي زيادة خلال الأنيميشن */
+  overflow: hidden;
 }
-</script></body></html></style></body></html>
+/* استثناء للـ span داخل العناوين */
+h1 [text-split], h2 [text-split] {
+  display: inline;
+  overflow: visible;
+  white-space: normal;
+  min-height: unset !important;
+  line-height: inherit;
+}
+</style></body></html></style></body></html>

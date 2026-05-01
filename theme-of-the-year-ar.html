@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
+﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 28 2026 23:56:22 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="69e40eb90be28aa3eb833ebb" data-wf-site="6947c050c911bc4da703773d">
 <head>
   <meta charset="utf-8">
@@ -127,6 +127,71 @@
     }
     .mobile-menu-footer .icon-btn { display: flex !important; }
   }
+  
+  /* إضافة خلفية صورة السهم ورا النص على الموبايل */
+  @media (max-width: 767px) {
+    .div-block-152 {
+      background: url('images/Artboard-12x-1-p-800.png') no-repeat center !important;
+      background-size: cover !important;
+      padding: 20px !important;
+      border-radius: 8px !important;
+    }
+    
+    .heading-44,
+    .heading-37,
+    .heading-39,
+    .paragraph-15 {
+      color: white !important;
+    }
+  }
+  
+  /* استخدام Group 109.png كخلفية للسكشن الأول - toty-hero */
+  .toty-bg-img {
+    transform: scaleX(-1) !important;
+  }
+  
+  .toty-hero .div-block-152.ar {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: 0 !important;
+    width: 55% !important;
+    padding: 100px 80px 3% 40px !important;
+    background: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    line-height: normal !important;
+    z-index: 2 !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+  }
+  
+  @media screen and (max-width: 991px) {
+    .toty-hero .div-block-152.ar {
+      padding: 40px 1.6rem !important;
+      width: 65% !important;
+    }
+    .section-32 .heading-44.ar { font-size: 28px !important; }
+    .section-32 .heading-37.ar { font-size: 18px !important; }
+    .section-32 .heading-39.ar { font-size: 32px !important; }
+    .section-32 .paragraph-15.ar { font-size: 14px !important; }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .toty-hero .div-block-152.ar {
+      position: relative !important;
+      width: 100% !important;
+      padding: 24px 1.6rem !important;
+      background: #0D94C8 !important;
+      overflow-y: visible !important;
+    }
+    .section-32 .heading-44.ar { font-size: 18px !important; }
+    .section-32 .heading-37.ar { font-size: 14px !important; }
+    .section-32 .heading-39.ar { font-size: 26px !important; }
+    .section-32 .paragraph-15.ar { font-size: 13px !important; }
+  }
 </style>
       <header class="header">
         <div class="header-content">
@@ -152,9 +217,7 @@
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
               </svg>
             </a>
-            <span class="icon-btn" style="cursor: default;" title="English">
-              <span class="lang-text">EN</span>
-            </span>
+            <a href="theme-of-the-year.html" class="icon-btn" title="English"><span class="lang-text">EN</span></a>
             <button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button>
           </div>
         </div>
@@ -162,10 +225,10 @@
       <nav class="navigation" id="navBar">
         <ul class="nav-list">
           <li>
-            <a href="https://gas-annual-report-2025-102f6530821d3ffd.webflow.io/home-ar" class="nav-link">الرئيسية</a>
+            <a href="home-ar.html" class="nav-link">الرئيسية</a>
           </li>
           <li>
-            <a href="https://gas-annual-report-2025-102f6530821d3ffd.webflow.io/overview-ar" class="nav-link">نظـرة عـامـة</a>
+            <a href="overview-ar.html" class="nav-link">نظـرة عـامـة</a>
           </li>
           <li>
             <a href="theme-of-the-year-ar.html" class="nav-link active">شـعــار الـعــام</a>
@@ -177,14 +240,14 @@
             <a href="chief-executive-officers-message-ar.html" class="nav-link">رسالة الرئيس التنفيذي</a>
           </li>
           <li>
-            <a href="directors-report-ar.html" class="nav-link">مجلس الإدارة</a>
+            <a href="directors-report-ar.html" class="nav-link">الحوكمة</a>
           </li>
           <li>
             <a href="financial-statement-ar.html" class="nav-link">المراجعة المالية</a>
           </li>
         </ul>
         <div class="mobile-menu-footer">
-          <span class="icon-btn" style="cursor: default;"><span class="lang-text" style="font-size: 20px;">EN</span></span>
+          <a href="theme-of-the-year.html" class="icon-btn"><span class="lang-text" style="font-size: 20px;">EN</span></a>
           <a href="https://www.saudiexchange.sa/Resources/fsPdf/8047_0_2026-03-31_15-01-08_En.pdf" class="icon-btn">
             <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px;">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
@@ -253,16 +316,20 @@
     </div>
   </section>
   <section class="section-32">
-    <div class="div-block-174 ar">
-      <div class="div-block-176 ar"><img src="images/Group-75.png" loading="lazy" width="531" sizes="(max-width: 767px) 100vw, 531px" alt="" srcset="images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-500.png 500w, images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-800.png 800w, images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-1080.png 1080w, images/3e73d153a19efd0a1fad0087f62fdcf6_Group-75-p-1600.png 1600w, images/Group-75.png 1842w" class="image-60 ar"></div>
-      <div class="div-block-177 ar"><img src="images/Artboard-12x-1.png" loading="lazy" sizes="(max-width: 920px) 100vw, 920px" srcset="images/Artboard-12x-1-p-500.png 500w, images/Artboard-12x-1-p-800.png 800w, images/Artboard-12x-1.png 920w" alt="" class="image-59 ar"></div>
+    <div class="toty-hero">
+      <img src="images/Group 109.png" loading="lazy" alt="" class="toty-bg-img">
       <div class="div-block-152 ar">
         <h1 class="heading-44 ar">شـعــار الـعــام</h1>
         <h3 class="heading-37 ar">رحلـة توسّع متـوازن </h3>
-        <h1 class="heading-39 ar">من نمو إلى تاسي</h1>
-        <p letters-fade-in="" text-split="" class="paragraph-15 paragraph-14 ar">تميّزت رحلة شركة جاز العربية للخدمات خلال عام 2025 بانضباطٍ تنفيذيٍّ راسخ وخطوةٍ مدروسة للانتقال إلى السوق الرئيسية في تداول السعودية. وقد صدرت الموافقة على الانتقال بتاريخ 16 سبتمبر 2025، وبدأ تداول السهم في 9 أكتوبر 2025 تحت الرمز 4146<br>وفي ظل تنامي النشاط عبر قطاعات الغاز والطاقة والصناعة في المملكة، واصلنا تطوير نموذجنا المتكامل في الخدمات الفنية والتجارة والتصنيع لتحويل الفرص إلى نتائج موثوقة ومستدامة. ومن خلال الجمع بين نضج منظومة الحوكمة والانضباط التشغيلي، عززنا جودة الأعمال تحت التنفيذ، وعمّقنا شراكاتنا مع العملاء، ورسّخنا القدرات التي تدعم نموًا وطنيًا موثوقًا<br>وأقلّ انبعاثًا للكربون.</p>
+        <h1 class="heading-39 ar">مسيرة نمو متوازن</h1>
+        <p letters-fade-in="" text-split="" class="paragraph-15 paragraph-14 ar">اتسمت مسيرة جاز العربية للخدمات خلال عام 2025 بتنفيذ منضبط وخطوة مدروسة نحو الانتقال إلى السوق الرئيسية في تداول. وقد صدرت الموافقة على الانتقال بتاريخ 16 سبتمبر 2025، وبدأ تداول السهم في 9 أكتوبر 2025 تحت الرمز 4146.<br>وفي ظل تصاعد وتيرة الأعمال عبر قطاعات الغاز والطاقة والصناعة في المملكة، واصلنا تطوير نموذجنا المتكامل في الخدمات الفنية والتجارة والتصنيع لتحويل الفرص إلى نتائج يمكن الاعتماد عليها. ومن خلال المواءمة بين نضج الحوكمة والانضباط التشغيلي، عززنا جودة رصيد الأعمال غير المنفذة، وعمقنا شراكات العملاء، ورسخنا القدرات التي تدعم نمواً موثوقاً داخل المملكة، وبأثر كربوني أقل.</p>
+      <!-- Mobile نمو تاسي -->
+      <div class="toty-mobile-nomu">
+        <h1 class="heading-41 ar">نمو</h1><img src="images/Group-10.png" loading="lazy" alt="" class="image-51 ar">
+        <h1 class="heading-40 ar">تاسي</h1>
       </div>
-    </div><img src="images/TOTY-1.png" loading="lazy" width="Auto" sizes="(max-width: 1848px) 100vw, 1848px" alt="" srcset="images/TOTY-1-p-500.png 500w, images/TOTY-1-p-800.png 800w, images/TOTY-1-p-1080.png 1080w, images/TOTY-1-p-1600.png 1600w, images/TOTY-1.png 1848w" class="image-58 ar">
+      </div>
+    </div>
   </section>
   <section class="section-28 ar">
     <div class="ar">
@@ -366,4 +433,61 @@ document.addEventListener("DOMContentLoaded", () => {
   word-wrap: break-word;
   overflow: hidden; /* يمنع ظهور أي زيادة خلال الأنيميشن */
 }
-</script></body></html></style></body></html>
+</script>
+
+<script>
+// Auto-fit ALL text in toty-hero so the block bottom reaches 55% of section height
+(function() {
+  var TARGET = 0.55;
+  var MIN_SCALE = 0.3;
+  var MAX_SCALE = 1.5;
+
+  // Base font sizes
+  var BASE = {
+    h44: 60, h37: 35, h39: 30, p15: 25
+  };
+
+  function fitText() {
+    if (window.innerWidth <= 767) return;
+    var hero = document.querySelector('.toty-hero');
+    var block = document.querySelector('.toty-hero .div-block-152');
+    var h44 = document.querySelector('.toty-hero .heading-44');
+    var h37 = document.querySelector('.toty-hero .heading-37');
+    var h39 = document.querySelector('.toty-hero .heading-39');
+    var p15 = document.querySelector('.toty-hero .paragraph-15');
+    if (!hero || !block || !h44 || !h37 || !h39 || !p15) return;
+
+    var heroH = hero.getBoundingClientRect().height;
+    if (heroH < 50) return;
+    var targetBottom = heroH * TARGET;
+
+    // Binary search for the right scale
+    var lo = MIN_SCALE, hi = MAX_SCALE, best = MIN_SCALE;
+    for (var iter = 0; iter < 25; iter++) {
+      var mid = (lo + hi) / 2;
+      h44.style.fontSize = (BASE.h44 * mid) + 'px';
+      h37.style.fontSize = (BASE.h37 * mid) + 'px';
+      h39.style.fontSize = (BASE.h39 * mid) + 'px';
+      p15.style.fontSize = (BASE.p15 * mid) + 'px';
+      p15.style.lineHeight = '1.6';
+      var blockBottom = block.getBoundingClientRect().bottom - hero.getBoundingClientRect().top;
+      if (blockBottom <= targetBottom) {
+        best = mid;
+        lo = mid;
+      } else {
+        hi = mid;
+      }
+    }
+    h44.style.fontSize = (BASE.h44 * best) + 'px';
+    h37.style.fontSize = (BASE.h37 * best) + 'px';
+    h39.style.fontSize = (BASE.h39 * best) + 'px';
+    p15.style.fontSize = (BASE.p15 * best) + 'px';
+  }
+
+  window.addEventListener('DOMContentLoaded', function() { setTimeout(fitText, 100); });
+  window.addEventListener('load', fitText);
+  window.addEventListener('resize', fitText);
+})();
+</script>
+</body>
+</html>
