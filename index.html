@@ -1030,12 +1030,27 @@ $(document).ready(function() {
     cursor: pointer !important;
     z-index: 999 !important;
   }
+  @media screen and (max-width: 767px) {
+    .div-block-293 #Image-77 {
+      display: block !important;
+      position: relative !important;
+      top: auto !important;
+      right: auto !important;
+    }
+  }
   .hide-now {
     display: none !important;
   }
   .quick-stack-2 {
     display: flex !important;
     width: 100% !important;
+    flex-direction: row; /* desktop default */
+  }
+  @media screen and (max-width: 767px) {
+    .quick-stack-2 {
+      flex-direction: column !important;
+      gap: 10px;
+    }
   }
   [id^="card-"] {
     flex: 1 !important;
@@ -1052,6 +1067,33 @@ $(document).ready(function() {
     opacity: 1;
     pointer-events: auto;
   }
+  /* عند فتح Read More - ثبّت الـ hover-content ظاهراً */
+  [id^="card-"].is-expanded [id^="hover-content-"] {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: flex !important;
+  }
+  /* كارد متمدد بعد Read More على الجوال */
+  @media screen and (max-width: 767px) {
+    [id^="card-"].card-expanded,
+    [id^="card-"].card-expanded .segment-card,
+    [id^="card-"].card-expanded .div-block-160 {
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      position: relative !important;
+      aspect-ratio: auto !important;
+    }
+    [id^="card-"].card-expanded .div-block-160 {
+      overflow-y: visible !important;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+    }
+  }
 </style>
   <script>
 $(document).ready(function() {
@@ -1059,33 +1101,91 @@ $(document).ready(function() {
   $('[id^="read-more-"]').on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
+
+    if (window.innerWidth <= 767) {
+      var $currentCard = $(this).closest('[id^="card-"]');
+      var card = $currentCard[0];
+      var segCard = card ? card.querySelector('.segment-card') : null;
+      var box = card ? card.querySelector('[id^="hover-content-"]') : null;
+      var fulls = box ? box.querySelectorAll('.full-description') : [];
+      var readMoreBtn = this;
+
+      fulls.forEach(function(full){ full.style.display = 'block'; });
+      readMoreBtn.style.display = 'none';
+
+      // إخفاء الصورة
+      var defaultDiv = card ? card.querySelector('[id^="default-"]') : null;
+      if (defaultDiv) defaultDiv.style.display = 'none';
+
+      // أضف class التمدد
+      $currentCard.addClass('card-expanded');
+      $currentCard.addClass('is-expanded');
+      if (segCard) segCard.classList.add('card-expanded-parent');
+      return;
+    }
+
+    // ديسكتوب
     var $currentCard = $(this).closest('[id^="card-"]');
     var num = $currentCard.attr('id').split('-')[1];
     var $otherCards = $currentCard.siblings('[id^="card-"]');
-    var $closeX = $currentCard.find('#Image-77'); // البحث عن صورة الإكس داخل الكارد
+    var $closeX = $currentCard.find('#Image-77');
     if (!$otherCards.hasClass('hide-now')) {
-      // إخفاء الكروت الأخرى
       $otherCards.addClass('hide-now');
       $(`#full-text-${num}`).fadeIn(400);
-      // إخفاء زر Read More وإظهار صورة الإكس (Image 77)
       $(this).hide();
       $closeX.fadeIn(300);
+      // ثبّت الكارد ظاهراً حتى بعد إزالة الماوس
+      $currentCard.addClass('is-expanded');
     }
   });
   // عند الضغط على صورة الإكس (Image 77) للإغلاق
   $(document).on('click', '#Image-77', function(e) {
+    if (window.innerWidth <= 767) {
+      var $currentCard = $(this).closest('[id^="card-"]');
+      var card = $currentCard[0];
+      var segCard = card ? card.querySelector('.segment-card') : null;
+      var box = card ? card.querySelector('[id^="hover-content-"]') : null;
+      var readMoreBtn = box ? box.querySelector('[id^="read-more-"]') : null;
+      var fulls = box ? box.querySelectorAll('.full-description') : [];
+
+      fulls.forEach(function(full){ full.style.display = 'none'; });
+      if (readMoreBtn) readMoreBtn.style.display = '';
+
+      $currentCard.removeClass('card-expanded');
+      $currentCard.removeClass('is-expanded');
+      if (segCard) segCard.classList.remove('card-expanded-parent');
+      if (card) card.removeAttribute('style');
+      if (segCard) segCard.removeAttribute('style');
+      if (box) { box.removeAttribute('style'); }
+      var def = card ? card.querySelector('[id^="default-"]') : null;
+      if (def) { def.style.display = ''; }
+      return;
+    }
+
+    // ديسكتوب
     var $currentCard = $(this).closest('[id^="card-"]');
     var num = $currentCard.attr('id').split('-')[1];
     var $otherCards = $currentCard.siblings('[id^="card-"]');
     var $readMoreBtn = $currentCard.find('[id^="read-more-"]');
-    // إعادة الكروت الأخرى
     $otherCards.removeClass('hide-now');
     $(`#full-text-${num}`).hide();
-    // إخفاء الإكس وإعادة إظهار زر Read More بتنسيقه الأصلي
     $(this).hide();
     $readMoreBtn.show();
+    // أزل class التثبيت - الهوفر يعود للعمل الطبيعي
+    $currentCard.removeClass('is-expanded');
   });
   // لا نحتاج hover logic - الـ CSS بتتولاه
+
+  // Mobile: tap on card shows hover
+  if (window.innerWidth <= 767) {
+    $('[id^="card-"]').on('click', function(e) {
+      if ($(e.target).closest('.div-block-160').length) return;
+      var $hoverContent = $(this).find('[id^="hover-content-"]');
+      var $defaultDiv = $(this).find('[id^="default-"]');
+      $defaultDiv.hide();
+      $hoverContent.css({'display': 'flex', 'opacity': '1', 'pointer-events': 'auto'});
+    });
+  }
 });
 </script>
   <script src="https://unpkg.com/split-type"></script>
@@ -1365,94 +1465,6 @@ window.addEventListener('DOMContentLoaded', function() {
   setTimeout(fitAll, 200);
   window.addEventListener('resize', function(){ setTimeout(fitAll, 100); });
   window.addEventListener('load', fitAll);
-
-  // Mobile: Read More expands card
-  document.querySelectorAll('.div-block-89').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      if (window.innerWidth > 767) return;
-      var card = btn.closest('.segment-card');
-      var box  = btn.closest('.div-block-160');
-      var fulls = box ? box.querySelectorAll('.full-description') : [];
-      if (fulls.length === 0 || !card) return;
-
-      // Show all full descriptions
-      fulls.forEach(function(full){
-        full.style.display = 'block';
-        full.style.fontFamily = 'Gretasanspro Reg, Georgia, sans-serif';
-        full.style.fontWeight = '400';
-      });
-      btn.style.display = 'none';
-
-      // Hide image, make blue card take full space
-      var imgs = card.querySelectorAll('.image-19,.image-20,.image-21');
-      var defaultDivs = card.querySelectorAll('.div-block-169, .div-block-168, .div-block-167');
-      imgs.forEach(function(img){ img.style.display = 'none'; });
-      defaultDivs.forEach(function(d){ d.style.display = 'none'; });
-
-      // Make card and box completely auto height - no constraints
-      card.style.height = 'auto';
-      card.style.minHeight = 'auto';
-      card.style.maxHeight = 'none';
-      card.style.overflow = 'visible';
-      
-      box.style.position = 'static';
-      box.style.height = 'auto';
-      box.style.minHeight = 'auto';
-      box.style.maxHeight = 'none';
-      box.style.overflow = 'visible';
-      box.style.top = 'auto';
-      box.style.left = 'auto';
-      box.style.right = 'auto';
-      box.style.bottom = 'auto';
-      
-      // Scroll to card
-      setTimeout(function(){
-        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-    });
-  });
-
-  // Mobile: X button restores card
-  document.querySelectorAll('.image-77').forEach(function(xBtn){
-    xBtn.addEventListener('click', function(){
-      if (window.innerWidth > 767) return;
-      var card = xBtn.closest('.segment-card');
-      var box  = xBtn.closest('.div-block-160');
-      if (!card || !box) return;
-      
-      // Restore fixed heights
-      card.style.height = '';
-      card.style.minHeight = '500px';
-      card.style.maxHeight = '';
-      card.style.overflow = 'hidden';
-      
-      box.style.position = 'absolute';
-      box.style.height = '100%';
-      box.style.minHeight = '';
-      box.style.maxHeight = '';
-      box.style.overflow = 'hidden';
-      box.style.top = '0';
-      box.style.left = '0';
-      box.style.right = '0';
-      box.style.bottom = '0';
-      
-      // Show images and default divs again
-      var imgs = card.querySelectorAll('.image-19,.image-20,.image-21');
-      var defaultDivs = card.querySelectorAll('.div-block-169, .div-block-168, .div-block-167');
-      imgs.forEach(function(img){ 
-        img.style.display = '';
-        img.style.height = '';
-        img.style.minHeight = '';
-      });
-      defaultDivs.forEach(function(d){ d.style.display = ''; });
-      
-      // Hide all full descriptions
-      var fulls = box.querySelectorAll('.full-description');
-      fulls.forEach(function(full){ full.style.display = 'none'; });
-      var readMore = box.querySelector('.div-block-89');
-      if (readMore) readMore.style.display = 'flex';
-    });
-  });
 
 });
 </script>

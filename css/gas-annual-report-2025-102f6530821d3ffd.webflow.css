@@ -14049,3 +14049,10 @@
   font-family: Gretasanspro Reg, Georgia, sans-serif !important;
   font-weight: 400 !important;
 }
+
+/* ===== Arabic cards mobile order ===== */
+@media screen and (max-width: 767px) {
+  .ar-cards #card-1 { order: 1 !important; }
+  .ar-cards #card-2 { order: 2 !important; }
+  .ar-cards #card-3 { order: 3 !important; }
+}
