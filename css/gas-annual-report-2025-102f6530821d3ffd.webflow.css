@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
   font-family: Gretaarabicar;
   src: url('../fonts/GretaArabicAR-Regular.otf') format("opentype"), url('../fonts/GretaArabicAR-Regular.otf') format("opentype");
   font-weight: 400;
@@ -1640,6 +1640,7 @@
   width: 200px;
   margin-top: 5px;
   margin-left: 20;
+  margin-right: 0px;
   display: flex;
 }
 
@@ -1649,17 +1650,42 @@
 
 .text-block-11 {
   color: #0c93c8;
-  margin-right: 20px;
+  margin-right: 0px;
   padding-left: 10px;
   font-family: Gretasanspro Reg, Georgia, sans-serif;
   font-size: 40px;
   line-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .text-block-11._2 {
   color: #fff;
   margin-top: 0;
-  margin-right: 20px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.million-text {
+  font-family: Gretaarabicar, Georgia, sans-serif !important;
+  font-size: 18px !important;
+  margin-left: 6px !important;
+  vertical-align: baseline !important;
+  display: inline-block !important;
+  font-weight: 400 !important;
+}
+
+.million-text-ar {
+  font-family: Gretaarabicar, Georgia, sans-serif !important;
+  font-size: 20px !important;
+  margin-right: 3px !important;
+  vertical-align: super !important;
+  display: inline !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
 }
 
 .image-28 {
@@ -1740,7 +1766,7 @@
 
 .section-12 {
   background-color: #003d79;
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px;
 }
 
@@ -2047,7 +2073,7 @@
 }
 
 .text-block-15 {
-  color: #133344;
+  color: #0c93c8;
   padding: 0;
   font-family: Gretasanspro Med, Georgia, sans-serif;
   font-size: 16px;
@@ -2058,7 +2084,7 @@
 }
 
 .text-block-15._2 {
-  color: #0c93c8;
+  color: #133344;
   text-align: center;
   white-space: nowrap;
   margin: 0;
@@ -2086,7 +2112,7 @@
 }
 
 .div-block-88 {
-  background-color: #133344;
+  background-color: #0c93c8;
   border-radius: 20px;
   flex: 0 0 auto;
   width: 30px;
@@ -2098,7 +2124,7 @@
 }
 
 .div-block-88._2 {
-  background-color: #0c93c8;
+  background-color: #133344;
   margin: 0;
   align-self: center;
   transform: translateY(-10px);
@@ -3543,37 +3569,41 @@
   background-color: #eee;
   background-image: linear-gradient(#0000001a, #fff 1%);
   margin-top: 0;
-  padding: 20px 57px 60px 80px;
+  padding: 0px 57px 0px 80px;
   position: relative;
 }
 
 .div-block-141 {
   background-color: #fff;
   height: 1px;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 
 .div-block-141.line2 {
   width: 40%;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .div-block-141.line2.ar {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .paragraph-13 {
   color: #143345;
-  margin-bottom: 0;
+  margin-bottom: 15px;
+  margin-top: 0px;
   font-family: Gretasanspro Med, Georgia, sans-serif;
   font-size: 25px;
-  line-height: 30px;
+  line-height: 28px;
+    min-height: auto !important;
+  min-width: auto !important;
+
 }
 
 .heading-34 {
   color: #030303;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-family: Gretasanspro Bld, Georgia, sans-serif;
   font-size: 40px;
   font-weight: 400;
@@ -3607,10 +3637,26 @@
   color: #0d94c8;
 }
 
+.paragraph-13 strong {
+  color: #0d94c8;
+  font-weight: 700;
+}
+
 .heading-34.b.ar {
   font-size: 35px;
   font-weight: 700;
   line-height: 40px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.section-26 .heading-34.b.ar:first-of-type {
+  margin-top: 0px;
+}
+
+.section-26 .heading-34.b.ar:nth-of-type(2) {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .heading-34.b._5 {
@@ -5462,7 +5508,10 @@
 }
 
 .text-block-49.ar {
-  line-height: 40px;
+  line-height: 1.6 !important;
+  font-size: clamp(16px, 1.5vw, 20px) !important;
+  margin-top: 8px !important;
+  margin-bottom: 6px !important;
 }
 
 .text-block-50 {
@@ -9209,6 +9258,11 @@
     font-size: 20px;
   }
 
+  .million-text {
+    font-size: 0.65em;
+    margin-left: 4px;
+  }
+
   .image-28 {
     width: 25px;
     height: 25px;
@@ -9576,7 +9630,7 @@
   }
 
   .div-block-141.line2 {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
   }
 
   .heading-34._7._3 {
@@ -10017,8 +10071,10 @@
   }
 
   .text-block-49 {
-    font-size: 35px;
-    line-height: 40px;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    margin-top: 8px !important;
+    margin-bottom: 5px !important;
   }
 
   .div-block-248 {
@@ -12077,7 +12133,7 @@
 
   .div-block-141 {
     height: 1px;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 0;
   }
 
@@ -12552,8 +12608,10 @@
   }
 
   .text-block-49 {
-    font-size: 23px;
-    line-height: 28px;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
   }
 
   .div-block-256 {
@@ -14055,4 +14113,71 @@
   .ar-cards #card-1 { order: 1 !important; }
   .ar-cards #card-2 { order: 2 !important; }
   .ar-cards #card-3 { order: 3 !important; }
+}
+
+/* ===== Mobile: Responsive million text styling ===== */
+@media screen and (max-width: 991px) {
+  .text-block-11 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .text-block-11._2 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .million-text {
+    font-size: 12px !important;
+    margin-left: 4px !important;
+  }
+
+  .million-text-ar {
+    font-size: 10px !important;
+    margin-right: 2px !important;
+  }
+}
+
+/* ===== Tablet: Responsive million text styling ===== */
+@media screen and (max-width: 767px) {
+  .text-block-11 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .text-block-11._2 {
+    font-size: 18px;
+  }
+
+  .million-text {
+    font-size: 10px !important;
+    margin-left: 3px !important;
+  }
+
+  .million-text-ar {
+    font-size: 9px !important;
+    margin-right: 2px !important;
+  }
+}
+
+/* ===== Extra small screens (max 480px) ===== */
+@media screen and (max-width: 480px) {
+  .text-block-11 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .text-block-11._2 {
+    font-size: 16px;
+  }
+
+  .million-text {
+    font-size: 9px !important;
+    margin-left: 2px !important;
+  }
+
+  .million-text-ar {
+    font-size: 8px !important;
+    margin-right: 1px !important;
+  }
 }
